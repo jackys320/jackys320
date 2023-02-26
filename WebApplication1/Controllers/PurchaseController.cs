@@ -50,7 +50,7 @@ namespace WebApplication1.Controllers
             }
             */
         }
-
+        //20230226 如何將一個完整的目錄上傳到 github 然後修改
         // GET: Purchase
         public ActionResult Index()
         {
