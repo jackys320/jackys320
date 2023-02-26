@@ -1,0 +1,2009 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.Account' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Account" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="Account" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password_check" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Purview" Type="int" />
+          <Property Name="user_group_no" Type="varchar" MaxLength="50" />
+          <Property Name="channel_no" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Createdate" Type="datetime" />
+          <Property Name="Logindate" Type="datetime" />
+          <Property Name="DepartmentNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="20" />
+          <Property Name="photo" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.BirthMsg' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="BirthMsg">
+          <Key>
+            <PropertyRef Name="BirthmsgNo" />
+          </Key>
+          <Property Name="BirthmsgNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cContent" Type="nvarchar" MaxLength="500" />
+          <Property Name="DepartmentNo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.Brand' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="BrandNo" />
+          </Key>
+          <Property Name="BrandNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Small_Image" Type="varchar" MaxLength="100" />
+          <Property Name="Big_Image" Type="varchar" MaxLength="100" />
+          <Property Name="Open_flg" Type="varchar" MaxLength="1" />
+          <Property Name="Createdate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.channel' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="channel">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="ftype" Type="varchar" MaxLength="60" />
+          <Property Name="name" Type="varchar" MaxLength="60" />
+          <Property Name="pic" Type="varchar" MaxLength="60" />
+          <Property Name="detail" Type="varchar" MaxLength="1000" />
+          <Property Name="sort" Type="varchar" MaxLength="60" />
+          <Property Name="up_flg" Type="varchar" MaxLength="60" />
+          <Property Name="product_message" Type="varchar" MaxLength="600" />
+          <Property Name="cfm_flg" Type="varchar" MaxLength="60" />
+          <Property Name="cCreDate" Type="datetime" />
+          <Property Name="cCreUser" Type="varchar" MaxLength="60" />
+          <Property Name="cModDate" Type="datetime" />
+          <Property Name="cModUser" Type="varchar" MaxLength="60" />
+          <Property Name="cCfmDate" Type="datetime" />
+          <Property Name="cCfmUser" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.Department' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentNo" />
+          </Key>
+          <Property Name="DepartmentNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="50" />
+          <Property Name="BrandNo" Type="varchar" MaxLength="50" />
+          <Property Name="StartTime" Type="varchar" MaxLength="10" />
+          <Property Name="EndTime" Type="varchar" MaxLength="10" />
+          <Property Name="day1" Type="varchar" MaxLength="1" />
+          <Property Name="day2" Type="varchar" MaxLength="1" />
+          <Property Name="day3" Type="varchar" MaxLength="1" />
+          <Property Name="day4" Type="varchar" MaxLength="1" />
+          <Property Name="day5" Type="varchar" MaxLength="1" />
+          <Property Name="day6" Type="varchar" MaxLength="1" />
+          <Property Name="day0" Type="varchar" MaxLength="1" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Fax" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="300" />
+          <Property Name="PositionX" Type="varchar" MaxLength="50" />
+          <Property Name="PositionY" Type="varchar" MaxLength="50" />
+          <Property Name="CouponMsg" Type="varchar" MaxLength="300" />
+          <Property Name="Introduce" Type="varchar" MaxLength="300" />
+          <Property Name="PackageName" Type="varchar" MaxLength="50" />
+          <Property Name="Image" Type="varchar" MaxLength="100" />
+          <Property Name="Image2" Type="varchar" MaxLength="100" />
+          <Property Name="Image3" Type="varchar" MaxLength="100" />
+          <Property Name="App" Type="varchar" MaxLength="1" />
+          <Property Name="Open_flg" Type="varchar" MaxLength="1" />
+          <Property Name="CutHair" Type="varchar" MaxLength="1" />
+          <Property Name="DyeHair" Type="varchar" MaxLength="1" />
+          <Property Name="PermHair" Type="varchar" MaxLength="1" />
+          <Property Name="CareHair" Type="varchar" MaxLength="1" />
+          <Property Name="Createdate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.Dept_Member' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Dept_Member">
+          <Key>
+            <PropertyRef Name="DepartmentNo" />
+            <PropertyRef Name="MemberNo" />
+          </Key>
+          <Property Name="DepartmentNo" Type="int" Nullable="false" />
+          <Property Name="MemberNo" Type="int" Nullable="false" />
+          <Property Name="Createdate" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.Designer' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Designer">
+          <Key>
+            <PropertyRef Name="DesignerNo" />
+          </Key>
+          <Property Name="DesignerNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DepartmentNo" Type="varchar" MaxLength="50" />
+          <Property Name="DesignerName" Type="varchar" MaxLength="50" />
+          <Property Name="NickName" Type="varchar" MaxLength="50" />
+          <Property Name="Introduce" Type="varchar" MaxLength="300" />
+          <Property Name="Image" Type="varchar" MaxLength="100" />
+          <Property Name="Createdate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.HairMsg' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="HairMsg">
+          <Key>
+            <PropertyRef Name="HairmsgNo" />
+          </Key>
+          <Property Name="HairmsgNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CutHair" Type="varchar" MaxLength="1" />
+          <Property Name="DyeHair" Type="varchar" MaxLength="1" />
+          <Property Name="PermHair" Type="varchar" MaxLength="1" />
+          <Property Name="CareHair" Type="varchar" MaxLength="1" />
+          <Property Name="cContent" Type="nvarchar" MaxLength="500" />
+          <Property Name="DepartmentNo" Type="varchar" MaxLength="50" />
+          <Property Name="Changedate" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.Headmsg' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Headmsg">
+          <Key>
+            <PropertyRef Name="HeadmsgNo" />
+          </Key>
+          <Property Name="HeadmsgNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DepartmentNo" Type="varchar" MaxLength="50" />
+          <Property Name="Headmsg" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6013: 資料表/檢視 'mis.dbo.login_log' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+        <EntityType Name="login_log">
+          <Property Name="Account" Type="varchar" MaxLength="60" />
+          <Property Name="IP" Type="varchar" MaxLength="60" />
+          <Property Name="action" Type="varchar" MaxLength="60" />
+          <Property Name="l_date" Type="varchar" MaxLength="60" />
+          <Property Name="l_time" Type="varchar" MaxLength="60" />
+        </EntityType>-->
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.Member' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberNo" />
+          </Key>
+          <Property Name="MemberNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DepartmentNo" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="NickName" Type="varchar" MaxLength="50" />
+          <Property Name="Sex" Type="varchar" MaxLength="1" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Token" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="300" />
+          <Property Name="Createdate" Type="varchar" MaxLength="50" />
+          <Property Name="BrandNo" Type="varchar" MaxLength="50" />
+          <Property Name="device" Type="varchar" MaxLength="1" />
+          <Property Name="Pushdate" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.Member_Department' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Member_Department">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MemberNo" Type="varchar" MaxLength="50" />
+          <Property Name="DepartmentNo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.MemberOrder' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="MemberOrder">
+          <Key>
+            <PropertyRef Name="MemberOrderNo" />
+          </Key>
+          <Property Name="MemberOrderNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MemberNo" Type="varchar" MaxLength="50" />
+          <Property Name="DesignerNo" Type="varchar" MaxLength="50" />
+          <Property Name="ScheduleNo" Type="varchar" MaxLength="50" />
+          <Property Name="Service" Type="varchar" MaxLength="1" />
+          <Property Name="Confirm" Type="bit" />
+          <Property Name="ScheduleDate" Type="varchar" MaxLength="10" />
+          <Property Name="ScheduleTime" Type="varchar" MaxLength="5" />
+          <Property Name="OrderTime" Type="datetime" />
+          <Property Name="PushNotice" Type="varchar" MaxLength="100" />
+          <Property Name="PushNotConfirm" Type="bit" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.product' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="product_no" />
+          </Key>
+          <Property Name="product_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="ftype" Type="varchar" MaxLength="60" />
+          <Property Name="brand_no" Type="varchar" MaxLength="60" />
+          <Property Name="product_type_no" Type="varchar" MaxLength="60" />
+          <Property Name="name" Type="varchar" MaxLength="60" />
+          <Property Name="ptype" Type="varchar" MaxLength="60" />
+          <Property Name="detail" Type="varchar" MaxLength="1000" />
+          <Property Name="fun_detail" Type="varchar" MaxLength="1000" />
+          <Property Name="star" Type="varchar" MaxLength="60" />
+          <Property Name="up_flg" Type="varchar" MaxLength="60" />
+          <Property Name="share" Type="varchar" MaxLength="60" />
+          <Property Name="sort" Type="varchar" MaxLength="60" />
+          <Property Name="pic_s" Type="varchar" MaxLength="60" />
+          <Property Name="pic_l_type" Type="varchar" MaxLength="60" />
+          <Property Name="pic_l" Type="varchar" MaxLength="60" />
+          <Property Name="youtube" Type="varchar" MaxLength="300" />
+          <Property Name="price" Type="int" />
+          <Property Name="price_favo" Type="int" />
+          <Property Name="on_shelf" Type="varchar" MaxLength="60" />
+          <Property Name="off_shelf" Type="varchar" MaxLength="60" />
+          <Property Name="url" Type="varchar" MaxLength="300" />
+          <Property Name="remark" Type="varchar" MaxLength="1000" />
+          <Property Name="cfm_flg" Type="varchar" MaxLength="60" />
+          <Property Name="cCreDate" Type="datetime" />
+          <Property Name="cCreUser" Type="varchar" MaxLength="60" />
+          <Property Name="cModDate" Type="datetime" />
+          <Property Name="cModUser" Type="varchar" MaxLength="60" />
+          <Property Name="cCfmDate" Type="datetime" />
+          <Property Name="cCfmUser" Type="varchar" MaxLength="60" />
+          <Property Name="source" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.product_brand' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="product_brand">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="ftype" Type="varchar" MaxLength="60" />
+          <Property Name="name" Type="varchar" MaxLength="60" />
+          <Property Name="pic" Type="varchar" MaxLength="60" />
+          <Property Name="cfm_flg" Type="varchar" MaxLength="60" />
+          <Property Name="cCreDate" Type="datetime" />
+          <Property Name="cCreUser" Type="varchar" MaxLength="60" />
+          <Property Name="cModDate" Type="datetime" />
+          <Property Name="cModUser" Type="varchar" MaxLength="60" />
+          <Property Name="cCfmDate" Type="datetime" />
+          <Property Name="cCfmUser" Type="varchar" MaxLength="60" />
+          <Property Name="source" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.product_channel' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="product_channel">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="product_no" Type="varchar" MaxLength="60" />
+          <Property Name="channel_no" Type="varchar" MaxLength="60" />
+          <Property Name="store_no" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="product_type">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="60" />
+          <Property Name="cfm_flg" Type="varchar" MaxLength="60" />
+          <Property Name="cCreDate" Type="datetime" />
+          <Property Name="cCreUser" Type="varchar" MaxLength="60" />
+          <Property Name="cModDate" Type="datetime" />
+          <Property Name="cModUser" Type="varchar" MaxLength="60" />
+          <Property Name="cCfmDate" Type="datetime" />
+          <Property Name="cCfmUser" Type="varchar" MaxLength="60" />
+          <Property Name="source" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.PushList' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="PushList">
+          <Key>
+            <PropertyRef Name="PushListNo" />
+          </Key>
+          <Property Name="PushListNo" Type="int" Nullable="false" />
+          <Property Name="MemberNo" Type="int" />
+          <Property Name="Token" Type="nvarchar" MaxLength="100" />
+          <Property Name="DepartmentNo" Type="int" />
+          <Property Name="PushDate" Type="varchar" MaxLength="10" />
+          <Property Name="PushTime" Type="varchar" MaxLength="10" />
+          <Property Name="Msg" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsSend" Type="bit" />
+          <Property Name="Changedate" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.PushMsg' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="PushMsg">
+          <Key>
+            <PropertyRef Name="SNO" />
+          </Key>
+          <Property Name="SNO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cContent" Type="nvarchar" MaxLength="500" />
+          <Property Name="cIsEnable" Type="tinyint" />
+          <Property Name="cPublishType" Type="varchar" MaxLength="50" />
+          <Property Name="cPublishDate" Type="datetime" />
+          <Property Name="cPublishTime" Type="varchar" MaxLength="50" />
+          <Property Name="cPublishAll" Type="varchar" MaxLength="50" />
+          <Property Name="DepartmentNo" Type="varchar" MaxLength="50" />
+          <Property Name="MemberNo" Type="varchar" MaxLength="50" />
+          <Property Name="HeadmsgNo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.PushService' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="PushService">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="run" Type="tinyint" />
+          <Property Name="run1date" Type="datetime" />
+          <Property Name="run0date" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.ScheduleTable' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="ScheduleTable">
+          <Key>
+            <PropertyRef Name="ScheduleNo" />
+          </Key>
+          <Property Name="ScheduleNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DesignerNo" Type="varchar" MaxLength="50" />
+          <Property Name="ScheduleDate" Type="datetime" />
+          <Property Name="DType" Type="char" MaxLength="1" />
+          <Property Name="Field0000" Type="varchar" MaxLength="1" />
+          <Property Name="Field0030" Type="varchar" MaxLength="1" />
+          <Property Name="Field0100" Type="varchar" MaxLength="1" />
+          <Property Name="Field0130" Type="varchar" MaxLength="1" />
+          <Property Name="Field0200" Type="varchar" MaxLength="1" />
+          <Property Name="Field0230" Type="varchar" MaxLength="1" />
+          <Property Name="Field0300" Type="varchar" MaxLength="1" />
+          <Property Name="Field0330" Type="varchar" MaxLength="1" />
+          <Property Name="Field0400" Type="varchar" MaxLength="1" />
+          <Property Name="Field0430" Type="varchar" MaxLength="1" />
+          <Property Name="Field0500" Type="varchar" MaxLength="1" />
+          <Property Name="Field0530" Type="varchar" MaxLength="1" />
+          <Property Name="Field0600" Type="varchar" MaxLength="1" />
+          <Property Name="Field0630" Type="varchar" MaxLength="1" />
+          <Property Name="Field0700" Type="varchar" MaxLength="1" />
+          <Property Name="Field0730" Type="varchar" MaxLength="1" />
+          <Property Name="Field0800" Type="varchar" MaxLength="1" />
+          <Property Name="Field0830" Type="varchar" MaxLength="1" />
+          <Property Name="Field0900" Type="varchar" MaxLength="1" />
+          <Property Name="Field0930" Type="varchar" MaxLength="1" />
+          <Property Name="Field1000" Type="varchar" MaxLength="1" />
+          <Property Name="Field1030" Type="varchar" MaxLength="1" />
+          <Property Name="Field1100" Type="varchar" MaxLength="1" />
+          <Property Name="Field1130" Type="varchar" MaxLength="1" />
+          <Property Name="Field1200" Type="varchar" MaxLength="1" />
+          <Property Name="Field1230" Type="varchar" MaxLength="1" />
+          <Property Name="Field1300" Type="varchar" MaxLength="1" />
+          <Property Name="Field1330" Type="varchar" MaxLength="1" />
+          <Property Name="Field1400" Type="varchar" MaxLength="1" />
+          <Property Name="Field1430" Type="varchar" MaxLength="1" />
+          <Property Name="Field1500" Type="varchar" MaxLength="1" />
+          <Property Name="Field1530" Type="varchar" MaxLength="1" />
+          <Property Name="Field1600" Type="varchar" MaxLength="1" />
+          <Property Name="Field1630" Type="varchar" MaxLength="1" />
+          <Property Name="Field1700" Type="varchar" MaxLength="1" />
+          <Property Name="Field1730" Type="varchar" MaxLength="1" />
+          <Property Name="Field1800" Type="varchar" MaxLength="1" />
+          <Property Name="Field1830" Type="varchar" MaxLength="1" />
+          <Property Name="Field1900" Type="varchar" MaxLength="1" />
+          <Property Name="Field1930" Type="varchar" MaxLength="1" />
+          <Property Name="Field2000" Type="varchar" MaxLength="1" />
+          <Property Name="Field2030" Type="varchar" MaxLength="1" />
+          <Property Name="Field2100" Type="varchar" MaxLength="1" />
+          <Property Name="Field2130" Type="varchar" MaxLength="1" />
+          <Property Name="Field2200" Type="varchar" MaxLength="1" />
+          <Property Name="Field2230" Type="varchar" MaxLength="1" />
+          <Property Name="Field2300" Type="varchar" MaxLength="1" />
+          <Property Name="Field2330" Type="varchar" MaxLength="1" />
+          <Property Name="Memo0000" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0030" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0100" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0130" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0200" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0230" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0300" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0330" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0400" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0430" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0500" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0530" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0600" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0630" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0700" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0730" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0800" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0830" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0900" Type="varchar" MaxLength="300" />
+          <Property Name="Memo0930" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1000" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1030" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1100" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1130" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1200" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1230" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1300" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1330" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1400" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1430" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1500" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1530" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1600" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1630" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1700" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1730" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1800" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1830" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1900" Type="varchar" MaxLength="300" />
+          <Property Name="Memo1930" Type="varchar" MaxLength="300" />
+          <Property Name="Memo2000" Type="varchar" MaxLength="300" />
+          <Property Name="Memo2030" Type="varchar" MaxLength="300" />
+          <Property Name="Memo2100" Type="varchar" MaxLength="300" />
+          <Property Name="Memo2130" Type="varchar" MaxLength="300" />
+          <Property Name="Memo2200" Type="varchar" MaxLength="300" />
+          <Property Name="Memo2230" Type="varchar" MaxLength="300" />
+          <Property Name="Memo2300" Type="varchar" MaxLength="300" />
+          <Property Name="Memo2330" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.store' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="store">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="ftype" Type="varchar" MaxLength="60" />
+          <Property Name="channel_no" Type="varchar" MaxLength="60" />
+          <Property Name="name" Type="varchar" MaxLength="60" />
+          <Property Name="pic" Type="varchar" MaxLength="60" />
+          <Property Name="address" Type="varchar" MaxLength="300" />
+          <Property Name="latitude" Type="varchar" MaxLength="60" />
+          <Property Name="longitude" Type="varchar" MaxLength="60" />
+          <Property Name="cfm_flg" Type="varchar" MaxLength="60" />
+          <Property Name="cCreDate" Type="datetime" />
+          <Property Name="cCreUser" Type="varchar" MaxLength="60" />
+          <Property Name="cModDate" Type="datetime" />
+          <Property Name="cModUser" Type="varchar" MaxLength="60" />
+          <Property Name="cCfmDate" Type="datetime" />
+          <Property Name="cCfmUser" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="sys_pgdetail">
+          <Key>
+            <PropertyRef Name="sys_pgdetail_no" />
+          </Key>
+          <Property Name="sys_pgdetail_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="sys_pgmaster_no" Type="varchar" MaxLength="60" />
+          <Property Name="name" Type="varchar" MaxLength="60" />
+          <Property Name="url" Type="varchar" MaxLength="300" />
+          <Property Name="sort" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.sys_pgdetail_group' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="sys_pgdetail_group">
+          <Key>
+            <PropertyRef Name="sys_pgdetail_group_no" />
+          </Key>
+          <Property Name="sys_pgdetail_group_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="sys_pgdetail_no" Type="varchar" MaxLength="60" />
+          <Property Name="user_group_no" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="sys_pgmaster">
+          <Key>
+            <PropertyRef Name="sys_pgmaster_no" />
+          </Key>
+          <Property Name="sys_pgmaster_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="60" />
+          <Property Name="url" Type="varchar" MaxLength="300" />
+          <Property Name="sort" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.sys_pgmaster_group' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="sys_pgmaster_group">
+          <Key>
+            <PropertyRef Name="sys_pgmaster_group_no" />
+          </Key>
+          <Property Name="sys_pgmaster_group_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="sys_pgmaster_no" Type="varchar" MaxLength="60" />
+          <Property Name="user_group_no" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'mis.dbo.user_group' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="user_group">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="id" Type="varchar" MaxLength="60" />
+          <Property Name="name" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <Association Name="FK_product_product_type">
+          <End Role="product_type" Type="Self.product_type" Multiplicity="0..1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product_type">
+              <PropertyRef Name="no" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="product_type_no" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Model1StoreContainer">
+          <EntitySet Name="product_type" EntityType="Self.product_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sys_pgdetail" EntityType="Self.sys_pgdetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sys_pgmaster" EntityType="Self.sys_pgmaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Account" EntityType="Self.Account" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Account].[Account] AS [Account], 
+    [Account].[Password] AS [Password], 
+    [Account].[Password_check] AS [Password_check], 
+    [Account].[Name] AS [Name], 
+    [Account].[Purview] AS [Purview], 
+    [Account].[user_group_no] AS [user_group_no], 
+    [Account].[channel_no] AS [channel_no], 
+    [Account].[Email] AS [Email], 
+    [Account].[Createdate] AS [Createdate], 
+    [Account].[Logindate] AS [Logindate], 
+    [Account].[DepartmentNo] AS [DepartmentNo], 
+    [Account].[pwd] AS [pwd], 
+    [Account].[photo] AS [photo]
+    FROM [dbo].[Account] AS [Account]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BirthMsg" EntityType="Self.BirthMsg" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BirthMsg].[BirthmsgNo] AS [BirthmsgNo], 
+    [BirthMsg].[cContent] AS [cContent], 
+    [BirthMsg].[DepartmentNo] AS [DepartmentNo]
+    FROM [dbo].[BirthMsg] AS [BirthMsg]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Brand" EntityType="Self.Brand" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Brand].[BrandNo] AS [BrandNo], 
+    [Brand].[Name] AS [Name], 
+    [Brand].[Small_Image] AS [Small_Image], 
+    [Brand].[Big_Image] AS [Big_Image], 
+    [Brand].[Open_flg] AS [Open_flg], 
+    [Brand].[Createdate] AS [Createdate]
+    FROM [dbo].[Brand] AS [Brand]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="channel" EntityType="Self.channel" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [channel].[no] AS [no], 
+    [channel].[ftype] AS [ftype], 
+    [channel].[name] AS [name], 
+    [channel].[pic] AS [pic], 
+    [channel].[detail] AS [detail], 
+    [channel].[sort] AS [sort], 
+    [channel].[up_flg] AS [up_flg], 
+    [channel].[product_message] AS [product_message], 
+    [channel].[cfm_flg] AS [cfm_flg], 
+    [channel].[cCreDate] AS [cCreDate], 
+    [channel].[cCreUser] AS [cCreUser], 
+    [channel].[cModDate] AS [cModDate], 
+    [channel].[cModUser] AS [cModUser], 
+    [channel].[cCfmDate] AS [cCfmDate], 
+    [channel].[cCfmUser] AS [cCfmUser]
+    FROM [dbo].[channel] AS [channel]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Department" EntityType="Self.Department" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Department].[DepartmentNo] AS [DepartmentNo], 
+    [Department].[DepartmentName] AS [DepartmentName], 
+    [Department].[BrandNo] AS [BrandNo], 
+    [Department].[StartTime] AS [StartTime], 
+    [Department].[EndTime] AS [EndTime], 
+    [Department].[day1] AS [day1], 
+    [Department].[day2] AS [day2], 
+    [Department].[day3] AS [day3], 
+    [Department].[day4] AS [day4], 
+    [Department].[day5] AS [day5], 
+    [Department].[day6] AS [day6], 
+    [Department].[day0] AS [day0], 
+    [Department].[Phone] AS [Phone], 
+    [Department].[Fax] AS [Fax], 
+    [Department].[Address] AS [Address], 
+    [Department].[PositionX] AS [PositionX], 
+    [Department].[PositionY] AS [PositionY], 
+    [Department].[CouponMsg] AS [CouponMsg], 
+    [Department].[Introduce] AS [Introduce], 
+    [Department].[PackageName] AS [PackageName], 
+    [Department].[Image] AS [Image], 
+    [Department].[Image2] AS [Image2], 
+    [Department].[Image3] AS [Image3], 
+    [Department].[App] AS [App], 
+    [Department].[Open_flg] AS [Open_flg], 
+    [Department].[CutHair] AS [CutHair], 
+    [Department].[DyeHair] AS [DyeHair], 
+    [Department].[PermHair] AS [PermHair], 
+    [Department].[CareHair] AS [CareHair], 
+    [Department].[Createdate] AS [Createdate]
+    FROM [dbo].[Department] AS [Department]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Dept_Member" EntityType="Self.Dept_Member" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Dept_Member].[DepartmentNo] AS [DepartmentNo], 
+    [Dept_Member].[MemberNo] AS [MemberNo], 
+    [Dept_Member].[Createdate] AS [Createdate]
+    FROM [dbo].[Dept_Member] AS [Dept_Member]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Designer" EntityType="Self.Designer" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Designer].[DesignerNo] AS [DesignerNo], 
+    [Designer].[DepartmentNo] AS [DepartmentNo], 
+    [Designer].[DesignerName] AS [DesignerName], 
+    [Designer].[NickName] AS [NickName], 
+    [Designer].[Introduce] AS [Introduce], 
+    [Designer].[Image] AS [Image], 
+    [Designer].[Createdate] AS [Createdate]
+    FROM [dbo].[Designer] AS [Designer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="HairMsg" EntityType="Self.HairMsg" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [HairMsg].[HairmsgNo] AS [HairmsgNo], 
+    [HairMsg].[CutHair] AS [CutHair], 
+    [HairMsg].[DyeHair] AS [DyeHair], 
+    [HairMsg].[PermHair] AS [PermHair], 
+    [HairMsg].[CareHair] AS [CareHair], 
+    [HairMsg].[cContent] AS [cContent], 
+    [HairMsg].[DepartmentNo] AS [DepartmentNo], 
+    [HairMsg].[Changedate] AS [Changedate]
+    FROM [dbo].[HairMsg] AS [HairMsg]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Headmsg" EntityType="Self.Headmsg" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Headmsg].[HeadmsgNo] AS [HeadmsgNo], 
+    [Headmsg].[DepartmentNo] AS [DepartmentNo], 
+    [Headmsg].[Headmsg] AS [Headmsg]
+    FROM [dbo].[Headmsg] AS [Headmsg]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Member" EntityType="Self.Member" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Member].[MemberNo] AS [MemberNo], 
+    [Member].[DepartmentNo] AS [DepartmentNo], 
+    [Member].[Name] AS [Name], 
+    [Member].[NickName] AS [NickName], 
+    [Member].[Sex] AS [Sex], 
+    [Member].[BirthDate] AS [BirthDate], 
+    [Member].[Phone] AS [Phone], 
+    [Member].[Email] AS [Email], 
+    [Member].[Username] AS [Username], 
+    [Member].[Password] AS [Password], 
+    [Member].[Token] AS [Token], 
+    [Member].[Address] AS [Address], 
+    [Member].[Createdate] AS [Createdate], 
+    [Member].[BrandNo] AS [BrandNo], 
+    [Member].[device] AS [device], 
+    [Member].[Pushdate] AS [Pushdate]
+    FROM [dbo].[Member] AS [Member]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Member_Department" EntityType="Self.Member_Department" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Member_Department].[no] AS [no], 
+    [Member_Department].[MemberNo] AS [MemberNo], 
+    [Member_Department].[DepartmentNo] AS [DepartmentNo]
+    FROM [dbo].[Member_Department] AS [Member_Department]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MemberOrder" EntityType="Self.MemberOrder" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MemberOrder].[MemberOrderNo] AS [MemberOrderNo], 
+    [MemberOrder].[MemberNo] AS [MemberNo], 
+    [MemberOrder].[DesignerNo] AS [DesignerNo], 
+    [MemberOrder].[ScheduleNo] AS [ScheduleNo], 
+    [MemberOrder].[Service] AS [Service], 
+    [MemberOrder].[Confirm] AS [Confirm], 
+    [MemberOrder].[ScheduleDate] AS [ScheduleDate], 
+    [MemberOrder].[ScheduleTime] AS [ScheduleTime], 
+    [MemberOrder].[OrderTime] AS [OrderTime], 
+    [MemberOrder].[PushNotice] AS [PushNotice], 
+    [MemberOrder].[PushNotConfirm] AS [PushNotConfirm]
+    FROM [dbo].[MemberOrder] AS [MemberOrder]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="product" EntityType="Self.product" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [product].[product_no] AS [product_no], 
+    [product].[ftype] AS [ftype], 
+    [product].[brand_no] AS [brand_no], 
+    [product].[product_type_no] AS [product_type_no], 
+    [product].[name] AS [name], 
+    [product].[ptype] AS [ptype], 
+    [product].[detail] AS [detail], 
+    [product].[fun_detail] AS [fun_detail], 
+    [product].[star] AS [star], 
+    [product].[up_flg] AS [up_flg], 
+    [product].[share] AS [share], 
+    [product].[sort] AS [sort], 
+    [product].[pic_s] AS [pic_s], 
+    [product].[pic_l_type] AS [pic_l_type], 
+    [product].[pic_l] AS [pic_l], 
+    [product].[youtube] AS [youtube], 
+    [product].[price] AS [price], 
+    [product].[price_favo] AS [price_favo], 
+    [product].[on_shelf] AS [on_shelf], 
+    [product].[off_shelf] AS [off_shelf], 
+    [product].[url] AS [url], 
+    [product].[remark] AS [remark], 
+    [product].[cfm_flg] AS [cfm_flg], 
+    [product].[cCreDate] AS [cCreDate], 
+    [product].[cCreUser] AS [cCreUser], 
+    [product].[cModDate] AS [cModDate], 
+    [product].[cModUser] AS [cModUser], 
+    [product].[cCfmDate] AS [cCfmDate], 
+    [product].[cCfmUser] AS [cCfmUser], 
+    [product].[source] AS [source]
+    FROM [dbo].[product] AS [product]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="product_brand" EntityType="Self.product_brand" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [product_brand].[no] AS [no], 
+    [product_brand].[ftype] AS [ftype], 
+    [product_brand].[name] AS [name], 
+    [product_brand].[pic] AS [pic], 
+    [product_brand].[cfm_flg] AS [cfm_flg], 
+    [product_brand].[cCreDate] AS [cCreDate], 
+    [product_brand].[cCreUser] AS [cCreUser], 
+    [product_brand].[cModDate] AS [cModDate], 
+    [product_brand].[cModUser] AS [cModUser], 
+    [product_brand].[cCfmDate] AS [cCfmDate], 
+    [product_brand].[cCfmUser] AS [cCfmUser], 
+    [product_brand].[source] AS [source]
+    FROM [dbo].[product_brand] AS [product_brand]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="product_channel" EntityType="Self.product_channel" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [product_channel].[no] AS [no], 
+    [product_channel].[product_no] AS [product_no], 
+    [product_channel].[channel_no] AS [channel_no], 
+    [product_channel].[store_no] AS [store_no]
+    FROM [dbo].[product_channel] AS [product_channel]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PushList" EntityType="Self.PushList" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PushList].[PushListNo] AS [PushListNo], 
+    [PushList].[MemberNo] AS [MemberNo], 
+    [PushList].[Token] AS [Token], 
+    [PushList].[DepartmentNo] AS [DepartmentNo], 
+    [PushList].[PushDate] AS [PushDate], 
+    [PushList].[PushTime] AS [PushTime], 
+    [PushList].[Msg] AS [Msg], 
+    [PushList].[IsSend] AS [IsSend], 
+    [PushList].[Changedate] AS [Changedate]
+    FROM [dbo].[PushList] AS [PushList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PushMsg" EntityType="Self.PushMsg" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PushMsg].[SNO] AS [SNO], 
+    [PushMsg].[cContent] AS [cContent], 
+    [PushMsg].[cIsEnable] AS [cIsEnable], 
+    [PushMsg].[cPublishType] AS [cPublishType], 
+    [PushMsg].[cPublishDate] AS [cPublishDate], 
+    [PushMsg].[cPublishTime] AS [cPublishTime], 
+    [PushMsg].[cPublishAll] AS [cPublishAll], 
+    [PushMsg].[DepartmentNo] AS [DepartmentNo], 
+    [PushMsg].[MemberNo] AS [MemberNo], 
+    [PushMsg].[HeadmsgNo] AS [HeadmsgNo]
+    FROM [dbo].[PushMsg] AS [PushMsg]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PushService" EntityType="Self.PushService" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PushService].[no] AS [no], 
+    [PushService].[run] AS [run], 
+    [PushService].[run1date] AS [run1date], 
+    [PushService].[run0date] AS [run0date]
+    FROM [dbo].[PushService] AS [PushService]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ScheduleTable" EntityType="Self.ScheduleTable" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ScheduleTable].[ScheduleNo] AS [ScheduleNo], 
+    [ScheduleTable].[DesignerNo] AS [DesignerNo], 
+    [ScheduleTable].[ScheduleDate] AS [ScheduleDate], 
+    [ScheduleTable].[DType] AS [DType], 
+    [ScheduleTable].[Field0000] AS [Field0000], 
+    [ScheduleTable].[Field0030] AS [Field0030], 
+    [ScheduleTable].[Field0100] AS [Field0100], 
+    [ScheduleTable].[Field0130] AS [Field0130], 
+    [ScheduleTable].[Field0200] AS [Field0200], 
+    [ScheduleTable].[Field0230] AS [Field0230], 
+    [ScheduleTable].[Field0300] AS [Field0300], 
+    [ScheduleTable].[Field0330] AS [Field0330], 
+    [ScheduleTable].[Field0400] AS [Field0400], 
+    [ScheduleTable].[Field0430] AS [Field0430], 
+    [ScheduleTable].[Field0500] AS [Field0500], 
+    [ScheduleTable].[Field0530] AS [Field0530], 
+    [ScheduleTable].[Field0600] AS [Field0600], 
+    [ScheduleTable].[Field0630] AS [Field0630], 
+    [ScheduleTable].[Field0700] AS [Field0700], 
+    [ScheduleTable].[Field0730] AS [Field0730], 
+    [ScheduleTable].[Field0800] AS [Field0800], 
+    [ScheduleTable].[Field0830] AS [Field0830], 
+    [ScheduleTable].[Field0900] AS [Field0900], 
+    [ScheduleTable].[Field0930] AS [Field0930], 
+    [ScheduleTable].[Field1000] AS [Field1000], 
+    [ScheduleTable].[Field1030] AS [Field1030], 
+    [ScheduleTable].[Field1100] AS [Field1100], 
+    [ScheduleTable].[Field1130] AS [Field1130], 
+    [ScheduleTable].[Field1200] AS [Field1200], 
+    [ScheduleTable].[Field1230] AS [Field1230], 
+    [ScheduleTable].[Field1300] AS [Field1300], 
+    [ScheduleTable].[Field1330] AS [Field1330], 
+    [ScheduleTable].[Field1400] AS [Field1400], 
+    [ScheduleTable].[Field1430] AS [Field1430], 
+    [ScheduleTable].[Field1500] AS [Field1500], 
+    [ScheduleTable].[Field1530] AS [Field1530], 
+    [ScheduleTable].[Field1600] AS [Field1600], 
+    [ScheduleTable].[Field1630] AS [Field1630], 
+    [ScheduleTable].[Field1700] AS [Field1700], 
+    [ScheduleTable].[Field1730] AS [Field1730], 
+    [ScheduleTable].[Field1800] AS [Field1800], 
+    [ScheduleTable].[Field1830] AS [Field1830], 
+    [ScheduleTable].[Field1900] AS [Field1900], 
+    [ScheduleTable].[Field1930] AS [Field1930], 
+    [ScheduleTable].[Field2000] AS [Field2000], 
+    [ScheduleTable].[Field2030] AS [Field2030], 
+    [ScheduleTable].[Field2100] AS [Field2100], 
+    [ScheduleTable].[Field2130] AS [Field2130], 
+    [ScheduleTable].[Field2200] AS [Field2200], 
+    [ScheduleTable].[Field2230] AS [Field2230], 
+    [ScheduleTable].[Field2300] AS [Field2300], 
+    [ScheduleTable].[Field2330] AS [Field2330], 
+    [ScheduleTable].[Memo0000] AS [Memo0000], 
+    [ScheduleTable].[Memo0030] AS [Memo0030], 
+    [ScheduleTable].[Memo0100] AS [Memo0100], 
+    [ScheduleTable].[Memo0130] AS [Memo0130], 
+    [ScheduleTable].[Memo0200] AS [Memo0200], 
+    [ScheduleTable].[Memo0230] AS [Memo0230], 
+    [ScheduleTable].[Memo0300] AS [Memo0300], 
+    [ScheduleTable].[Memo0330] AS [Memo0330], 
+    [ScheduleTable].[Memo0400] AS [Memo0400], 
+    [ScheduleTable].[Memo0430] AS [Memo0430], 
+    [ScheduleTable].[Memo0500] AS [Memo0500], 
+    [ScheduleTable].[Memo0530] AS [Memo0530], 
+    [ScheduleTable].[Memo0600] AS [Memo0600], 
+    [ScheduleTable].[Memo0630] AS [Memo0630], 
+    [ScheduleTable].[Memo0700] AS [Memo0700], 
+    [ScheduleTable].[Memo0730] AS [Memo0730], 
+    [ScheduleTable].[Memo0800] AS [Memo0800], 
+    [ScheduleTable].[Memo0830] AS [Memo0830], 
+    [ScheduleTable].[Memo0900] AS [Memo0900], 
+    [ScheduleTable].[Memo0930] AS [Memo0930], 
+    [ScheduleTable].[Memo1000] AS [Memo1000], 
+    [ScheduleTable].[Memo1030] AS [Memo1030], 
+    [ScheduleTable].[Memo1100] AS [Memo1100], 
+    [ScheduleTable].[Memo1130] AS [Memo1130], 
+    [ScheduleTable].[Memo1200] AS [Memo1200], 
+    [ScheduleTable].[Memo1230] AS [Memo1230], 
+    [ScheduleTable].[Memo1300] AS [Memo1300], 
+    [ScheduleTable].[Memo1330] AS [Memo1330], 
+    [ScheduleTable].[Memo1400] AS [Memo1400], 
+    [ScheduleTable].[Memo1430] AS [Memo1430], 
+    [ScheduleTable].[Memo1500] AS [Memo1500], 
+    [ScheduleTable].[Memo1530] AS [Memo1530], 
+    [ScheduleTable].[Memo1600] AS [Memo1600], 
+    [ScheduleTable].[Memo1630] AS [Memo1630], 
+    [ScheduleTable].[Memo1700] AS [Memo1700], 
+    [ScheduleTable].[Memo1730] AS [Memo1730], 
+    [ScheduleTable].[Memo1800] AS [Memo1800], 
+    [ScheduleTable].[Memo1830] AS [Memo1830], 
+    [ScheduleTable].[Memo1900] AS [Memo1900], 
+    [ScheduleTable].[Memo1930] AS [Memo1930], 
+    [ScheduleTable].[Memo2000] AS [Memo2000], 
+    [ScheduleTable].[Memo2030] AS [Memo2030], 
+    [ScheduleTable].[Memo2100] AS [Memo2100], 
+    [ScheduleTable].[Memo2130] AS [Memo2130], 
+    [ScheduleTable].[Memo2200] AS [Memo2200], 
+    [ScheduleTable].[Memo2230] AS [Memo2230], 
+    [ScheduleTable].[Memo2300] AS [Memo2300], 
+    [ScheduleTable].[Memo2330] AS [Memo2330]
+    FROM [dbo].[ScheduleTable] AS [ScheduleTable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="store" EntityType="Self.store" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [store].[no] AS [no], 
+    [store].[ftype] AS [ftype], 
+    [store].[channel_no] AS [channel_no], 
+    [store].[name] AS [name], 
+    [store].[pic] AS [pic], 
+    [store].[address] AS [address], 
+    [store].[latitude] AS [latitude], 
+    [store].[longitude] AS [longitude], 
+    [store].[cfm_flg] AS [cfm_flg], 
+    [store].[cCreDate] AS [cCreDate], 
+    [store].[cCreUser] AS [cCreUser], 
+    [store].[cModDate] AS [cModDate], 
+    [store].[cModUser] AS [cModUser], 
+    [store].[cCfmDate] AS [cCfmDate], 
+    [store].[cCfmUser] AS [cCfmUser]
+    FROM [dbo].[store] AS [store]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sys_pgdetail_group" EntityType="Self.sys_pgdetail_group" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [sys_pgdetail_group].[sys_pgdetail_group_no] AS [sys_pgdetail_group_no], 
+    [sys_pgdetail_group].[sys_pgdetail_no] AS [sys_pgdetail_no], 
+    [sys_pgdetail_group].[user_group_no] AS [user_group_no]
+    FROM [dbo].[sys_pgdetail_group] AS [sys_pgdetail_group]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sys_pgmaster_group" EntityType="Self.sys_pgmaster_group" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [sys_pgmaster_group].[sys_pgmaster_group_no] AS [sys_pgmaster_group_no], 
+    [sys_pgmaster_group].[sys_pgmaster_no] AS [sys_pgmaster_no], 
+    [sys_pgmaster_group].[user_group_no] AS [user_group_no]
+    FROM [dbo].[sys_pgmaster_group] AS [sys_pgmaster_group]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="user_group" EntityType="Self.user_group" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [user_group].[no] AS [no], 
+    [user_group].[id] AS [id], 
+    [user_group].[name] AS [name]
+    FROM [dbo].[user_group] AS [user_group]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_product_product_type" Association="Self.FK_product_product_type">
+            <End Role="product_type" EntitySet="product_type" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="misEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="product_type" EntityType="Model1.product_type" />
+          <EntitySet Name="sys_pgdetail" EntityType="Model1.sys_pgdetail" />
+          <EntitySet Name="sys_pgmaster" EntityType="Model1.sys_pgmaster" />
+          <EntitySet Name="sysdiagrams" EntityType="Model1.sysdiagrams" />
+          <EntitySet Name="Account" EntityType="Model1.Account" />
+          <EntitySet Name="BirthMsg" EntityType="Model1.BirthMsg" />
+          <EntitySet Name="Brand" EntityType="Model1.Brand" />
+          <EntitySet Name="channel" EntityType="Model1.channel" />
+          <EntitySet Name="Department" EntityType="Model1.Department" />
+          <EntitySet Name="Dept_Member" EntityType="Model1.Dept_Member" />
+          <EntitySet Name="Designer" EntityType="Model1.Designer" />
+          <EntitySet Name="HairMsg" EntityType="Model1.HairMsg" />
+          <EntitySet Name="Headmsg" EntityType="Model1.Headmsg" />
+          <EntitySet Name="Member" EntityType="Model1.Member" />
+          <EntitySet Name="Member_Department" EntityType="Model1.Member_Department" />
+          <EntitySet Name="MemberOrder" EntityType="Model1.MemberOrder" />
+          <EntitySet Name="product" EntityType="Model1.product" />
+          <EntitySet Name="product_brand" EntityType="Model1.product_brand" />
+          <EntitySet Name="product_channel" EntityType="Model1.product_channel" />
+          <EntitySet Name="PushList" EntityType="Model1.PushList" />
+          <EntitySet Name="PushMsg" EntityType="Model1.PushMsg" />
+          <EntitySet Name="PushService" EntityType="Model1.PushService" />
+          <EntitySet Name="ScheduleTable" EntityType="Model1.ScheduleTable" />
+          <EntitySet Name="store" EntityType="Model1.store" />
+          <EntitySet Name="sys_pgdetail_group" EntityType="Model1.sys_pgdetail_group" />
+          <EntitySet Name="sys_pgmaster_group" EntityType="Model1.sys_pgmaster_group" />
+          <EntitySet Name="user_group" EntityType="Model1.user_group" />
+          <AssociationSet Name="FK_product_product_type" Association="Model1.FK_product_product_type">
+            <End Role="product_type" EntitySet="product_type" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="product_type">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cfm_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cCreDate" Type="DateTime" Precision="3" />
+          <Property Name="cCreUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cModDate" Type="DateTime" Precision="3" />
+          <Property Name="cModUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cCfmDate" Type="DateTime" Precision="3" />
+          <Property Name="cCfmUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="source" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="product" Relationship="Model1.FK_product_product_type" FromRole="product_type" ToRole="product" />
+        </EntityType>
+        <EntityType Name="sys_pgdetail">
+          <Key>
+            <PropertyRef Name="sys_pgdetail_no" />
+          </Key>
+          <Property Name="sys_pgdetail_no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="sys_pgmaster_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="url" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="sort" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sys_pgmaster">
+          <Key>
+            <PropertyRef Name="sys_pgmaster_no" />
+          </Key>
+          <Property Name="sys_pgmaster_no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="url" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="sort" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Account1" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="Account1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password_check" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Purview" Type="Int32" />
+          <Property Name="user_group_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="channel_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Createdate" Type="DateTime" Precision="3" />
+          <Property Name="Logindate" Type="DateTime" Precision="3" />
+          <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pwd" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BirthMsg">
+          <Key>
+            <PropertyRef Name="BirthmsgNo" />
+          </Key>
+          <Property Name="BirthmsgNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="BrandNo" />
+          </Key>
+          <Property Name="BrandNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Small_Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Big_Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Open_flg" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Createdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="channel">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ftype" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="pic" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="detail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="sort" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="up_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="product_message" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="cfm_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cCreDate" Type="DateTime" Precision="3" />
+          <Property Name="cCreUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cModDate" Type="DateTime" Precision="3" />
+          <Property Name="cModUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cCfmDate" Type="DateTime" Precision="3" />
+          <Property Name="cCfmUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentNo" />
+          </Key>
+          <Property Name="DepartmentNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BrandNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StartTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EndTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="day1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="day2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="day3" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="day4" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="day5" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="day6" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="day0" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="PositionX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PositionY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CouponMsg" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Introduce" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="PackageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Image2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Image3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="App" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Open_flg" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CutHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DyeHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PermHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CareHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Createdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Dept_Member">
+          <Key>
+            <PropertyRef Name="DepartmentNo" />
+            <PropertyRef Name="MemberNo" />
+          </Key>
+          <Property Name="DepartmentNo" Type="Int32" Nullable="false" />
+          <Property Name="MemberNo" Type="Int32" Nullable="false" />
+          <Property Name="Createdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Designer">
+          <Key>
+            <PropertyRef Name="DesignerNo" />
+          </Key>
+          <Property Name="DesignerNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DesignerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Introduce" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Createdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="HairMsg">
+          <Key>
+            <PropertyRef Name="HairmsgNo" />
+          </Key>
+          <Property Name="HairmsgNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CutHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DyeHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PermHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CareHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="cContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Changedate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Headmsg">
+          <Key>
+            <PropertyRef Name="HeadmsgNo" />
+          </Key>
+          <Property Name="HeadmsgNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Headmsg1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberNo" />
+          </Key>
+          <Property Name="MemberNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Token" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Createdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BrandNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="device" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Pushdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Member_Department">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MemberNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MemberOrder">
+          <Key>
+            <PropertyRef Name="MemberOrderNo" />
+          </Key>
+          <Property Name="MemberOrderNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MemberNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DesignerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ScheduleNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Service" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Confirm" Type="Boolean" />
+          <Property Name="ScheduleDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ScheduleTime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="OrderTime" Type="DateTime" Precision="3" />
+          <Property Name="PushNotice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PushNotConfirm" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="product_no" />
+          </Key>
+          <Property Name="product_no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ftype" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="brand_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="product_type_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ptype" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="detail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="fun_detail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="star" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="up_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="share" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="sort" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="pic_s" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="pic_l_type" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="pic_l" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="youtube" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="price_favo" Type="Int32" />
+          <Property Name="on_shelf" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="off_shelf" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="url" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="remark" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="cfm_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cCreDate" Type="DateTime" Precision="3" />
+          <Property Name="cCreUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cModDate" Type="DateTime" Precision="3" />
+          <Property Name="cModUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cCfmDate" Type="DateTime" Precision="3" />
+          <Property Name="cCfmUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="source" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="product_type" Relationship="Model1.FK_product_product_type" FromRole="product" ToRole="product_type" />
+        </EntityType>
+        <EntityType Name="product_brand">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ftype" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="pic" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cfm_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cCreDate" Type="DateTime" Precision="3" />
+          <Property Name="cCreUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cModDate" Type="DateTime" Precision="3" />
+          <Property Name="cModUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cCfmDate" Type="DateTime" Precision="3" />
+          <Property Name="cCfmUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="source" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="product_channel">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="product_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="channel_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="store_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PushList">
+          <Key>
+            <PropertyRef Name="PushListNo" />
+          </Key>
+          <Property Name="PushListNo" Type="Int32" Nullable="false" />
+          <Property Name="MemberNo" Type="Int32" />
+          <Property Name="Token" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentNo" Type="Int32" />
+          <Property Name="PushDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PushTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Msg" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsSend" Type="Boolean" />
+          <Property Name="Changedate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PushMsg">
+          <Key>
+            <PropertyRef Name="SNO" />
+          </Key>
+          <Property Name="SNO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="cIsEnable" Type="Byte" />
+          <Property Name="cPublishType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cPublishDate" Type="DateTime" Precision="3" />
+          <Property Name="cPublishTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cPublishAll" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MemberNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HeadmsgNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PushService">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="run" Type="Byte" />
+          <Property Name="run1date" Type="DateTime" Precision="3" />
+          <Property Name="run0date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ScheduleTable">
+          <Key>
+            <PropertyRef Name="ScheduleNo" />
+          </Key>
+          <Property Name="ScheduleNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DesignerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ScheduleDate" Type="DateTime" Precision="3" />
+          <Property Name="DType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Field0000" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0030" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0100" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0130" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0200" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0230" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0300" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0330" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0400" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0430" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0500" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0530" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0600" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0630" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0700" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0730" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0800" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0830" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0900" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field0930" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1000" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1030" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1100" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1130" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1200" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1230" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1300" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1330" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1400" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1430" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1500" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1530" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1600" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1630" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1700" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1730" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1800" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1830" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1900" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field1930" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field2000" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field2030" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field2100" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field2130" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field2200" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field2230" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field2300" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Field2330" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0000" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0030" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0100" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0130" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0200" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0230" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0300" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0330" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0400" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0430" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0500" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0530" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0600" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0630" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0700" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0730" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0800" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0830" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0900" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo0930" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1000" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1030" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1100" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1130" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1200" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1230" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1300" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1330" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1400" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1430" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1500" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1530" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1600" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1630" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1700" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1730" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1800" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1830" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1900" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo1930" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo2000" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo2030" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo2100" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo2130" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo2200" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo2230" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo2300" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Memo2330" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="store">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ftype" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="channel_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="pic" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="latitude" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="longitude" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cfm_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cCreDate" Type="DateTime" Precision="3" />
+          <Property Name="cCreUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cModDate" Type="DateTime" Precision="3" />
+          <Property Name="cModUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cCfmDate" Type="DateTime" Precision="3" />
+          <Property Name="cCfmUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sys_pgdetail_group">
+          <Key>
+            <PropertyRef Name="sys_pgdetail_group_no" />
+          </Key>
+          <Property Name="sys_pgdetail_group_no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="sys_pgdetail_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="user_group_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sys_pgmaster_group">
+          <Key>
+            <PropertyRef Name="sys_pgmaster_group_no" />
+          </Key>
+          <Property Name="sys_pgmaster_group_no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="sys_pgmaster_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="user_group_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="user_group">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_product_product_type">
+          <End Type="Model1.product_type" Role="product_type" Multiplicity="0..1" />
+          <End Type="Model1.product" Role="product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product_type">
+              <PropertyRef Name="no" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="product_type_no" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="misEntities2">
+          <EntitySetMapping Name="product_type">
+            <EntityTypeMapping TypeName="Model1.product_type">
+              <MappingFragment StoreEntitySet="product_type">
+                <ScalarProperty Name="source" ColumnName="source" />
+                <ScalarProperty Name="cCfmUser" ColumnName="cCfmUser" />
+                <ScalarProperty Name="cCfmDate" ColumnName="cCfmDate" />
+                <ScalarProperty Name="cModUser" ColumnName="cModUser" />
+                <ScalarProperty Name="cModDate" ColumnName="cModDate" />
+                <ScalarProperty Name="cCreUser" ColumnName="cCreUser" />
+                <ScalarProperty Name="cCreDate" ColumnName="cCreDate" />
+                <ScalarProperty Name="cfm_flg" ColumnName="cfm_flg" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="no" ColumnName="no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_pgdetail">
+            <EntityTypeMapping TypeName="Model1.sys_pgdetail">
+              <MappingFragment StoreEntitySet="sys_pgdetail">
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="sys_pgmaster_no" ColumnName="sys_pgmaster_no" />
+                <ScalarProperty Name="sys_pgdetail_no" ColumnName="sys_pgdetail_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_pgmaster">
+            <EntityTypeMapping TypeName="Model1.sys_pgmaster">
+              <MappingFragment StoreEntitySet="sys_pgmaster">
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="sys_pgmaster_no" ColumnName="sys_pgmaster_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Model1.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Account">
+            <EntityTypeMapping TypeName="Model1.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+                <ScalarProperty Name="Logindate" ColumnName="Logindate" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="channel_no" ColumnName="channel_no" />
+                <ScalarProperty Name="user_group_no" ColumnName="user_group_no" />
+                <ScalarProperty Name="Purview" ColumnName="Purview" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password_check" ColumnName="Password_check" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Account1" ColumnName="Account" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BirthMsg">
+            <EntityTypeMapping TypeName="Model1.BirthMsg">
+              <MappingFragment StoreEntitySet="BirthMsg">
+                <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+                <ScalarProperty Name="cContent" ColumnName="cContent" />
+                <ScalarProperty Name="BirthmsgNo" ColumnName="BirthmsgNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brand">
+            <EntityTypeMapping TypeName="Model1.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="Open_flg" ColumnName="Open_flg" />
+                <ScalarProperty Name="Big_Image" ColumnName="Big_Image" />
+                <ScalarProperty Name="Small_Image" ColumnName="Small_Image" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BrandNo" ColumnName="BrandNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="channel">
+            <EntityTypeMapping TypeName="Model1.channel">
+              <MappingFragment StoreEntitySet="channel">
+                <ScalarProperty Name="cCfmUser" ColumnName="cCfmUser" />
+                <ScalarProperty Name="cCfmDate" ColumnName="cCfmDate" />
+                <ScalarProperty Name="cModUser" ColumnName="cModUser" />
+                <ScalarProperty Name="cModDate" ColumnName="cModDate" />
+                <ScalarProperty Name="cCreUser" ColumnName="cCreUser" />
+                <ScalarProperty Name="cCreDate" ColumnName="cCreDate" />
+                <ScalarProperty Name="cfm_flg" ColumnName="cfm_flg" />
+                <ScalarProperty Name="product_message" ColumnName="product_message" />
+                <ScalarProperty Name="up_flg" ColumnName="up_flg" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="ftype" ColumnName="ftype" />
+                <ScalarProperty Name="no" ColumnName="no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department">
+            <EntityTypeMapping TypeName="Model1.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="CareHair" ColumnName="CareHair" />
+                <ScalarProperty Name="PermHair" ColumnName="PermHair" />
+                <ScalarProperty Name="DyeHair" ColumnName="DyeHair" />
+                <ScalarProperty Name="CutHair" ColumnName="CutHair" />
+                <ScalarProperty Name="Open_flg" ColumnName="Open_flg" />
+                <ScalarProperty Name="App" ColumnName="App" />
+                <ScalarProperty Name="Image3" ColumnName="Image3" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+                <ScalarProperty Name="Introduce" ColumnName="Introduce" />
+                <ScalarProperty Name="CouponMsg" ColumnName="CouponMsg" />
+                <ScalarProperty Name="PositionY" ColumnName="PositionY" />
+                <ScalarProperty Name="PositionX" ColumnName="PositionX" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="day0" ColumnName="day0" />
+                <ScalarProperty Name="day6" ColumnName="day6" />
+                <ScalarProperty Name="day5" ColumnName="day5" />
+                <ScalarProperty Name="day4" ColumnName="day4" />
+                <ScalarProperty Name="day3" ColumnName="day3" />
+                <ScalarProperty Name="day2" ColumnName="day2" />
+                <ScalarProperty Name="day1" ColumnName="day1" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="BrandNo" ColumnName="BrandNo" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dept_Member">
+            <EntityTypeMapping TypeName="Model1.Dept_Member">
+              <MappingFragment StoreEntitySet="Dept_Member">
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+                <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Designer">
+            <EntityTypeMapping TypeName="Model1.Designer">
+              <MappingFragment StoreEntitySet="Designer">
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Introduce" ColumnName="Introduce" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="DesignerName" ColumnName="DesignerName" />
+                <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+                <ScalarProperty Name="DesignerNo" ColumnName="DesignerNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HairMsg">
+            <EntityTypeMapping TypeName="Model1.HairMsg">
+              <MappingFragment StoreEntitySet="HairMsg">
+                <ScalarProperty Name="Changedate" ColumnName="Changedate" />
+                <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+                <ScalarProperty Name="cContent" ColumnName="cContent" />
+                <ScalarProperty Name="CareHair" ColumnName="CareHair" />
+                <ScalarProperty Name="PermHair" ColumnName="PermHair" />
+                <ScalarProperty Name="DyeHair" ColumnName="DyeHair" />
+                <ScalarProperty Name="CutHair" ColumnName="CutHair" />
+                <ScalarProperty Name="HairmsgNo" ColumnName="HairmsgNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Headmsg">
+            <EntityTypeMapping TypeName="Model1.Headmsg">
+              <MappingFragment StoreEntitySet="Headmsg">
+                <ScalarProperty Name="Headmsg1" ColumnName="Headmsg" />
+                <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+                <ScalarProperty Name="HeadmsgNo" ColumnName="HeadmsgNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Member">
+            <EntityTypeMapping TypeName="Model1.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="Pushdate" ColumnName="Pushdate" />
+                <ScalarProperty Name="device" ColumnName="device" />
+                <ScalarProperty Name="BrandNo" ColumnName="BrandNo" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+                <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Member_Department">
+            <EntityTypeMapping TypeName="Model1.Member_Department">
+              <MappingFragment StoreEntitySet="Member_Department">
+                <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+                <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+                <ScalarProperty Name="no" ColumnName="no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberOrder">
+            <EntityTypeMapping TypeName="Model1.MemberOrder">
+              <MappingFragment StoreEntitySet="MemberOrder">
+                <ScalarProperty Name="PushNotConfirm" ColumnName="PushNotConfirm" />
+                <ScalarProperty Name="PushNotice" ColumnName="PushNotice" />
+                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+                <ScalarProperty Name="ScheduleTime" ColumnName="ScheduleTime" />
+                <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+                <ScalarProperty Name="Confirm" ColumnName="Confirm" />
+                <ScalarProperty Name="Service" ColumnName="Service" />
+                <ScalarProperty Name="ScheduleNo" ColumnName="ScheduleNo" />
+                <ScalarProperty Name="DesignerNo" ColumnName="DesignerNo" />
+                <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+                <ScalarProperty Name="MemberOrderNo" ColumnName="MemberOrderNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product">
+            <EntityTypeMapping TypeName="Model1.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="source" ColumnName="source" />
+                <ScalarProperty Name="cCfmUser" ColumnName="cCfmUser" />
+                <ScalarProperty Name="cCfmDate" ColumnName="cCfmDate" />
+                <ScalarProperty Name="cModUser" ColumnName="cModUser" />
+                <ScalarProperty Name="cModDate" ColumnName="cModDate" />
+                <ScalarProperty Name="cCreUser" ColumnName="cCreUser" />
+                <ScalarProperty Name="cCreDate" ColumnName="cCreDate" />
+                <ScalarProperty Name="cfm_flg" ColumnName="cfm_flg" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="off_shelf" ColumnName="off_shelf" />
+                <ScalarProperty Name="on_shelf" ColumnName="on_shelf" />
+                <ScalarProperty Name="price_favo" ColumnName="price_favo" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="youtube" ColumnName="youtube" />
+                <ScalarProperty Name="pic_l" ColumnName="pic_l" />
+                <ScalarProperty Name="pic_l_type" ColumnName="pic_l_type" />
+                <ScalarProperty Name="pic_s" ColumnName="pic_s" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="share" ColumnName="share" />
+                <ScalarProperty Name="up_flg" ColumnName="up_flg" />
+                <ScalarProperty Name="star" ColumnName="star" />
+                <ScalarProperty Name="fun_detail" ColumnName="fun_detail" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="ptype" ColumnName="ptype" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="product_type_no" ColumnName="product_type_no" />
+                <ScalarProperty Name="brand_no" ColumnName="brand_no" />
+                <ScalarProperty Name="ftype" ColumnName="ftype" />
+                <ScalarProperty Name="product_no" ColumnName="product_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_brand">
+            <EntityTypeMapping TypeName="Model1.product_brand">
+              <MappingFragment StoreEntitySet="product_brand">
+                <ScalarProperty Name="source" ColumnName="source" />
+                <ScalarProperty Name="cCfmUser" ColumnName="cCfmUser" />
+                <ScalarProperty Name="cCfmDate" ColumnName="cCfmDate" />
+                <ScalarProperty Name="cModUser" ColumnName="cModUser" />
+                <ScalarProperty Name="cModDate" ColumnName="cModDate" />
+                <ScalarProperty Name="cCreUser" ColumnName="cCreUser" />
+                <ScalarProperty Name="cCreDate" ColumnName="cCreDate" />
+                <ScalarProperty Name="cfm_flg" ColumnName="cfm_flg" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="ftype" ColumnName="ftype" />
+                <ScalarProperty Name="no" ColumnName="no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_channel">
+            <EntityTypeMapping TypeName="Model1.product_channel">
+              <MappingFragment StoreEntitySet="product_channel">
+                <ScalarProperty Name="store_no" ColumnName="store_no" />
+                <ScalarProperty Name="channel_no" ColumnName="channel_no" />
+                <ScalarProperty Name="product_no" ColumnName="product_no" />
+                <ScalarProperty Name="no" ColumnName="no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PushList">
+            <EntityTypeMapping TypeName="Model1.PushList">
+              <MappingFragment StoreEntitySet="PushList">
+                <ScalarProperty Name="Changedate" ColumnName="Changedate" />
+                <ScalarProperty Name="IsSend" ColumnName="IsSend" />
+                <ScalarProperty Name="Msg" ColumnName="Msg" />
+                <ScalarProperty Name="PushTime" ColumnName="PushTime" />
+                <ScalarProperty Name="PushDate" ColumnName="PushDate" />
+                <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+                <ScalarProperty Name="PushListNo" ColumnName="PushListNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PushMsg">
+            <EntityTypeMapping TypeName="Model1.PushMsg">
+              <MappingFragment StoreEntitySet="PushMsg">
+                <ScalarProperty Name="HeadmsgNo" ColumnName="HeadmsgNo" />
+                <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+                <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+                <ScalarProperty Name="cPublishAll" ColumnName="cPublishAll" />
+                <ScalarProperty Name="cPublishTime" ColumnName="cPublishTime" />
+                <ScalarProperty Name="cPublishDate" ColumnName="cPublishDate" />
+                <ScalarProperty Name="cPublishType" ColumnName="cPublishType" />
+                <ScalarProperty Name="cIsEnable" ColumnName="cIsEnable" />
+                <ScalarProperty Name="cContent" ColumnName="cContent" />
+                <ScalarProperty Name="SNO" ColumnName="SNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PushService">
+            <EntityTypeMapping TypeName="Model1.PushService">
+              <MappingFragment StoreEntitySet="PushService">
+                <ScalarProperty Name="run0date" ColumnName="run0date" />
+                <ScalarProperty Name="run1date" ColumnName="run1date" />
+                <ScalarProperty Name="run" ColumnName="run" />
+                <ScalarProperty Name="no" ColumnName="no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScheduleTable">
+            <EntityTypeMapping TypeName="Model1.ScheduleTable">
+              <MappingFragment StoreEntitySet="ScheduleTable">
+                <ScalarProperty Name="Memo2330" ColumnName="Memo2330" />
+                <ScalarProperty Name="Memo2300" ColumnName="Memo2300" />
+                <ScalarProperty Name="Memo2230" ColumnName="Memo2230" />
+                <ScalarProperty Name="Memo2200" ColumnName="Memo2200" />
+                <ScalarProperty Name="Memo2130" ColumnName="Memo2130" />
+                <ScalarProperty Name="Memo2100" ColumnName="Memo2100" />
+                <ScalarProperty Name="Memo2030" ColumnName="Memo2030" />
+                <ScalarProperty Name="Memo2000" ColumnName="Memo2000" />
+                <ScalarProperty Name="Memo1930" ColumnName="Memo1930" />
+                <ScalarProperty Name="Memo1900" ColumnName="Memo1900" />
+                <ScalarProperty Name="Memo1830" ColumnName="Memo1830" />
+                <ScalarProperty Name="Memo1800" ColumnName="Memo1800" />
+                <ScalarProperty Name="Memo1730" ColumnName="Memo1730" />
+                <ScalarProperty Name="Memo1700" ColumnName="Memo1700" />
+                <ScalarProperty Name="Memo1630" ColumnName="Memo1630" />
+                <ScalarProperty Name="Memo1600" ColumnName="Memo1600" />
+                <ScalarProperty Name="Memo1530" ColumnName="Memo1530" />
+                <ScalarProperty Name="Memo1500" ColumnName="Memo1500" />
+                <ScalarProperty Name="Memo1430" ColumnName="Memo1430" />
+                <ScalarProperty Name="Memo1400" ColumnName="Memo1400" />
+                <ScalarProperty Name="Memo1330" ColumnName="Memo1330" />
+                <ScalarProperty Name="Memo1300" ColumnName="Memo1300" />
+                <ScalarProperty Name="Memo1230" ColumnName="Memo1230" />
+                <ScalarProperty Name="Memo1200" ColumnName="Memo1200" />
+                <ScalarProperty Name="Memo1130" ColumnName="Memo1130" />
+                <ScalarProperty Name="Memo1100" ColumnName="Memo1100" />
+                <ScalarProperty Name="Memo1030" ColumnName="Memo1030" />
+                <ScalarProperty Name="Memo1000" ColumnName="Memo1000" />
+                <ScalarProperty Name="Memo0930" ColumnName="Memo0930" />
+                <ScalarProperty Name="Memo0900" ColumnName="Memo0900" />
+                <ScalarProperty Name="Memo0830" ColumnName="Memo0830" />
+                <ScalarProperty Name="Memo0800" ColumnName="Memo0800" />
+                <ScalarProperty Name="Memo0730" ColumnName="Memo0730" />
+                <ScalarProperty Name="Memo0700" ColumnName="Memo0700" />
+                <ScalarProperty Name="Memo0630" ColumnName="Memo0630" />
+                <ScalarProperty Name="Memo0600" ColumnName="Memo0600" />
+                <ScalarProperty Name="Memo0530" ColumnName="Memo0530" />
+                <ScalarProperty Name="Memo0500" ColumnName="Memo0500" />
+                <ScalarProperty Name="Memo0430" ColumnName="Memo0430" />
+                <ScalarProperty Name="Memo0400" ColumnName="Memo0400" />
+                <ScalarProperty Name="Memo0330" ColumnName="Memo0330" />
+                <ScalarProperty Name="Memo0300" ColumnName="Memo0300" />
+                <ScalarProperty Name="Memo0230" ColumnName="Memo0230" />
+                <ScalarProperty Name="Memo0200" ColumnName="Memo0200" />
+                <ScalarProperty Name="Memo0130" ColumnName="Memo0130" />
+                <ScalarProperty Name="Memo0100" ColumnName="Memo0100" />
+                <ScalarProperty Name="Memo0030" ColumnName="Memo0030" />
+                <ScalarProperty Name="Memo0000" ColumnName="Memo0000" />
+                <ScalarProperty Name="Field2330" ColumnName="Field2330" />
+                <ScalarProperty Name="Field2300" ColumnName="Field2300" />
+                <ScalarProperty Name="Field2230" ColumnName="Field2230" />
+                <ScalarProperty Name="Field2200" ColumnName="Field2200" />
+                <ScalarProperty Name="Field2130" ColumnName="Field2130" />
+                <ScalarProperty Name="Field2100" ColumnName="Field2100" />
+                <ScalarProperty Name="Field2030" ColumnName="Field2030" />
+                <ScalarProperty Name="Field2000" ColumnName="Field2000" />
+                <ScalarProperty Name="Field1930" ColumnName="Field1930" />
+                <ScalarProperty Name="Field1900" ColumnName="Field1900" />
+                <ScalarProperty Name="Field1830" ColumnName="Field1830" />
+                <ScalarProperty Name="Field1800" ColumnName="Field1800" />
+                <ScalarProperty Name="Field1730" ColumnName="Field1730" />
+                <ScalarProperty Name="Field1700" ColumnName="Field1700" />
+                <ScalarProperty Name="Field1630" ColumnName="Field1630" />
+                <ScalarProperty Name="Field1600" ColumnName="Field1600" />
+                <ScalarProperty Name="Field1530" ColumnName="Field1530" />
+                <ScalarProperty Name="Field1500" ColumnName="Field1500" />
+                <ScalarProperty Name="Field1430" ColumnName="Field1430" />
+                <ScalarProperty Name="Field1400" ColumnName="Field1400" />
+                <ScalarProperty Name="Field1330" ColumnName="Field1330" />
+                <ScalarProperty Name="Field1300" ColumnName="Field1300" />
+                <ScalarProperty Name="Field1230" ColumnName="Field1230" />
+                <ScalarProperty Name="Field1200" ColumnName="Field1200" />
+                <ScalarProperty Name="Field1130" ColumnName="Field1130" />
+                <ScalarProperty Name="Field1100" ColumnName="Field1100" />
+                <ScalarProperty Name="Field1030" ColumnName="Field1030" />
+                <ScalarProperty Name="Field1000" ColumnName="Field1000" />
+                <ScalarProperty Name="Field0930" ColumnName="Field0930" />
+                <ScalarProperty Name="Field0900" ColumnName="Field0900" />
+                <ScalarProperty Name="Field0830" ColumnName="Field0830" />
+                <ScalarProperty Name="Field0800" ColumnName="Field0800" />
+                <ScalarProperty Name="Field0730" ColumnName="Field0730" />
+                <ScalarProperty Name="Field0700" ColumnName="Field0700" />
+                <ScalarProperty Name="Field0630" ColumnName="Field0630" />
+                <ScalarProperty Name="Field0600" ColumnName="Field0600" />
+                <ScalarProperty Name="Field0530" ColumnName="Field0530" />
+                <ScalarProperty Name="Field0500" ColumnName="Field0500" />
+                <ScalarProperty Name="Field0430" ColumnName="Field0430" />
+                <ScalarProperty Name="Field0400" ColumnName="Field0400" />
+                <ScalarProperty Name="Field0330" ColumnName="Field0330" />
+                <ScalarProperty Name="Field0300" ColumnName="Field0300" />
+                <ScalarProperty Name="Field0230" ColumnName="Field0230" />
+                <ScalarProperty Name="Field0200" ColumnName="Field0200" />
+                <ScalarProperty Name="Field0130" ColumnName="Field0130" />
+                <ScalarProperty Name="Field0100" ColumnName="Field0100" />
+                <ScalarProperty Name="Field0030" ColumnName="Field0030" />
+                <ScalarProperty Name="Field0000" ColumnName="Field0000" />
+                <ScalarProperty Name="DType" ColumnName="DType" />
+                <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+                <ScalarProperty Name="DesignerNo" ColumnName="DesignerNo" />
+                <ScalarProperty Name="ScheduleNo" ColumnName="ScheduleNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="store">
+            <EntityTypeMapping TypeName="Model1.store">
+              <MappingFragment StoreEntitySet="store">
+                <ScalarProperty Name="cCfmUser" ColumnName="cCfmUser" />
+                <ScalarProperty Name="cCfmDate" ColumnName="cCfmDate" />
+                <ScalarProperty Name="cModUser" ColumnName="cModUser" />
+                <ScalarProperty Name="cModDate" ColumnName="cModDate" />
+                <ScalarProperty Name="cCreUser" ColumnName="cCreUser" />
+                <ScalarProperty Name="cCreDate" ColumnName="cCreDate" />
+                <ScalarProperty Name="cfm_flg" ColumnName="cfm_flg" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="channel_no" ColumnName="channel_no" />
+                <ScalarProperty Name="ftype" ColumnName="ftype" />
+                <ScalarProperty Name="no" ColumnName="no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_pgdetail_group">
+            <EntityTypeMapping TypeName="Model1.sys_pgdetail_group">
+              <MappingFragment StoreEntitySet="sys_pgdetail_group">
+                <ScalarProperty Name="user_group_no" ColumnName="user_group_no" />
+                <ScalarProperty Name="sys_pgdetail_no" ColumnName="sys_pgdetail_no" />
+                <ScalarProperty Name="sys_pgdetail_group_no" ColumnName="sys_pgdetail_group_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_pgmaster_group">
+            <EntityTypeMapping TypeName="Model1.sys_pgmaster_group">
+              <MappingFragment StoreEntitySet="sys_pgmaster_group">
+                <ScalarProperty Name="user_group_no" ColumnName="user_group_no" />
+                <ScalarProperty Name="sys_pgmaster_no" ColumnName="sys_pgmaster_no" />
+                <ScalarProperty Name="sys_pgmaster_group_no" ColumnName="sys_pgmaster_group_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_group">
+            <EntityTypeMapping TypeName="Model1.user_group">
+              <MappingFragment StoreEntitySet="user_group">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="no" ColumnName="no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

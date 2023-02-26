@@ -1,0 +1,230 @@
+﻿@model WebApplication1.Models.Menu
+
+@{
+    ViewBag.Title = "MenuItem";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+    <h2>MenuItem</h2>
+    @ViewBag.LoginName
+    @TempData["LoginName"]
+    @Session["LoginName"]
+
+    <h3>Are you sure you want to delete this?</h3>
+
+    <title>Tree Menu - Make menus that expand when clicked</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="description" content="TreeMenu creates tree menus out of UL/LI tags that pop open when clicked.">
+    <meta name="author" content="Mack Pexton">
+    <link rel="stylesheet" href="~/Content/css/acmebase.css" type="text/css">
+    <script type="text/javascript" src="@Url.Content("~/Scripts/TreeMenu.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+    <style type="text/css">
+        /* Menu container */
+        .menu {
+            width: 350px;
+            height: 500px;
+            border: solid #FF9900 1px;
+            padding: 10px 5px 10px 5px;
+            margin: 12px 12px 12px 50px;
+        }
+
+        a {
+            text-decoration: none; /* 消除底線 */
+        }
+
+            a:link {
+                /*color: #FF0000;*/
+            }
+        /* 未被访问的链接 */
+        a:visited {
+            color: #00FF00;
+        }
+        /* 已被访问的链接 */
+        a:hover {
+            color: #FF00FF;
+            text-decoration: underline; /* 消除底線 */
+        }
+        /* 鼠标指针移动到链接上 */
+        a:active {
+            color: #0000FF;
+        }
+
+        /* 正在被点击的链接 */
+
+        /* Menu styles */
+        .menu ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .menu li {
+            margin: 0px 0px 0px 5px;
+            padding: 0px;
+            list-style-type: none;
+            text-align: left;
+            /*font-family: "微軟正黑體",Arial,Helvetica,sans-serif;*/
+            font-family: "微軟正黑體",Arial,Helvetica,sans-serif;
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        /* Submenu styles */
+        .menu ul ul {
+            background-color: #F6F6F6;
+        }
+
+        .menu li li {
+            margin: 0px 0px 0px 16px;
+            /*font-family: "微軟正黑體",Arial,Helvetica,sans-serif;*/
+            font-family: "微軟正黑體",Arial,Helvetica,sans-serif;
+            font-size: 13px;
+        }
+
+        /* Symbol styles */
+        .menu .symbol-item {
+            float: left;
+            /*width: 16px;*/
+            /*width: 12px;*/
+            width: 0px;
+            height: 1em;
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+
+        .menu .symbol-open,
+        .menu .symbol-close {
+            float: left;
+            width: 16px;
+            /*width: 32px;*/
+            height: 1em;
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+
+        .menu .symbol-item {
+            /*background-image: url(/icons/page.png);*/
+        }
+
+        .menu .symbol-close {
+            background-image: url(/icons/plus-folder.png);
+            background-image: url(/icons/plus.png);
+        }
+
+        .menu .symbol-open {
+            background-image: url(/icons/minus-folder.png);
+            background-image: url(/icons/minus.png);
+        }
+
+        .menu .symbol-item.last {
+        }
+
+        .menu .symbol-close.last {
+        }
+
+        .menu .symbol-open.last {
+        }
+
+        /* Menu line styles */
+        .menu li.item {
+            font-weight: normal;
+        }
+
+        .menu li.close {
+            font-weight: normal;
+        }
+
+        .menu li.open {
+            font-weight: bold;
+        }
+
+        .menu li.item.last {
+        }
+
+        .menu li.close.last {
+        }
+
+        .menu li.open.last {
+        }
+
+        a.go:link, a.go:visited, a.go:active {
+            display: block;
+            height: 26px;
+            width: 100px;
+            background-color: #FFFFFF;
+            color: #333333;
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: right;
+            text-decoration: none;
+            line-height: 26px;
+            padding-right: 30px;
+            background-image: url(/icons/go.gif);
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+
+        a.go:hover {
+            text-decoration: none;
+            color: #488400;
+        }
+
+        #example3 {
+            width: 40%;
+            background-color: #F9F9F9;
+            padding: 0px;
+            margin-left: 24px;
+        }
+
+        #example3 li {
+            list-style: none;
+            margin: 1px 0px;
+        }
+
+        #example3 li a {
+            display: block;
+            height: 16px;
+            padding: 0px 4px;
+            background-color: #EEEEFF;
+        }
+
+        #example3 li ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #example3 li ul li a {
+            background-color: #F9F9F9;
+            border-bottom: solid #ECECEC 1px;
+            padding-left: 20px;
+        }
+    </style>
+
+</head>    
+<body>
+    <div class="menu">
+        <ul id="example1">
+            @foreach (var parentMenu in Model.sys_pgmaster)
+            {
+                <li align="left">
+                    @parentMenu.name
+                    <ul>
+                        @foreach (var childMenu in Model.sys_pgdetail.Where(x => x.sys_pgmaster_no.Contains(@parentMenu.sys_pgmaster_no)))
+                        {
+                            <li>@Html.ActionLink(@childMenu.name, @childMenu.sort, "Home")</li>
+                        }
+                    </ul>
+                </li>
+            }
+        </ul>
+        <script type="text/javascript">make_tree_menu('example1'); TreeMenu.show_all('example1');</script>
+    </div>
+
+
+
+</body>
+</html>

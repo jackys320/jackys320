@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5d3ebb73b25c4db8a83f13195a7ce10d" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="Model1.product_type" Width="1.5" PointX="0.75" PointY="3.125" />
+        <EntityTypeShape EntityType="Model1.sys_pgdetail" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1.sys_pgmaster" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model1.sysdiagrams" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Model1.Account" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1.BirthMsg" Width="1.5" PointX="7.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Model1.Brand" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Model1.channel" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1.Department" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Model1.Dept_Member" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Model1.Designer" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Model1.HairMsg" Width="1.5" PointX="9.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Model1.Headmsg" Width="1.5" PointX="9.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Model1.Member" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1.Member_Department" Width="1.5" PointX="11.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Model1.MemberOrder" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Model1.product" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="Model1.product_brand" Width="1.5" PointX="11.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Model1.product_channel" Width="1.5" PointX="8.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Model1.PushList" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1.PushMsg" Width="1.5" PointX="2.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Model1.PushService" Width="1.5" PointX="13.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Model1.ScheduleTable" Width="1.5" PointX="13.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Model1.store" Width="1.5" PointX="10.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Model1.sys_pgdetail_group" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1.sys_pgmaster_group" Width="1.5" PointX="15.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model1.user_group" Width="1.5" PointX="4.75" PointY="15.75" />
+        <AssociationConnector Association="Model1.FK_product_product_type" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

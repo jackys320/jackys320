@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="misEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="product_type" EntityType="Model1.product_type" />
+    <EntitySet Name="sys_pgdetail" EntityType="Model1.sys_pgdetail" />
+    <EntitySet Name="sys_pgmaster" EntityType="Model1.sys_pgmaster" />
+    <EntitySet Name="sysdiagrams" EntityType="Model1.sysdiagrams" />
+    <EntitySet Name="Account" EntityType="Model1.Account" />
+    <EntitySet Name="BirthMsg" EntityType="Model1.BirthMsg" />
+    <EntitySet Name="Brand" EntityType="Model1.Brand" />
+    <EntitySet Name="channel" EntityType="Model1.channel" />
+    <EntitySet Name="Department" EntityType="Model1.Department" />
+    <EntitySet Name="Dept_Member" EntityType="Model1.Dept_Member" />
+    <EntitySet Name="Designer" EntityType="Model1.Designer" />
+    <EntitySet Name="HairMsg" EntityType="Model1.HairMsg" />
+    <EntitySet Name="Headmsg" EntityType="Model1.Headmsg" />
+    <EntitySet Name="Member" EntityType="Model1.Member" />
+    <EntitySet Name="Member_Department" EntityType="Model1.Member_Department" />
+    <EntitySet Name="MemberOrder" EntityType="Model1.MemberOrder" />
+    <EntitySet Name="product" EntityType="Model1.product" />
+    <EntitySet Name="product_brand" EntityType="Model1.product_brand" />
+    <EntitySet Name="product_channel" EntityType="Model1.product_channel" />
+    <EntitySet Name="PushList" EntityType="Model1.PushList" />
+    <EntitySet Name="PushMsg" EntityType="Model1.PushMsg" />
+    <EntitySet Name="PushService" EntityType="Model1.PushService" />
+    <EntitySet Name="ScheduleTable" EntityType="Model1.ScheduleTable" />
+    <EntitySet Name="store" EntityType="Model1.store" />
+    <EntitySet Name="sys_pgdetail_group" EntityType="Model1.sys_pgdetail_group" />
+    <EntitySet Name="sys_pgmaster_group" EntityType="Model1.sys_pgmaster_group" />
+    <EntitySet Name="user_group" EntityType="Model1.user_group" />
+    <AssociationSet Name="FK_product_product_type" Association="Model1.FK_product_product_type">
+      <End Role="product_type" EntitySet="product_type" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="product_type">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cfm_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cCreDate" Type="DateTime" Precision="3" />
+    <Property Name="cCreUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cModDate" Type="DateTime" Precision="3" />
+    <Property Name="cModUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cCfmDate" Type="DateTime" Precision="3" />
+    <Property Name="cCfmUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="source" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="product" Relationship="Model1.FK_product_product_type" FromRole="product_type" ToRole="product" />
+  </EntityType>
+  <EntityType Name="sys_pgdetail">
+    <Key>
+      <PropertyRef Name="sys_pgdetail_no" />
+    </Key>
+    <Property Name="sys_pgdetail_no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="sys_pgmaster_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="sort" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sys_pgmaster">
+    <Key>
+      <PropertyRef Name="sys_pgmaster_no" />
+    </Key>
+    <Property Name="sys_pgmaster_no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="sort" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Account1" />
+      <PropertyRef Name="Password" />
+    </Key>
+    <Property Name="Account1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password_check" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Purview" Type="Int32" />
+    <Property Name="user_group_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="channel_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Createdate" Type="DateTime" Precision="3" />
+    <Property Name="Logindate" Type="DateTime" Precision="3" />
+    <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pwd" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BirthMsg">
+    <Key>
+      <PropertyRef Name="BirthmsgNo" />
+    </Key>
+    <Property Name="BirthmsgNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="BrandNo" />
+    </Key>
+    <Property Name="BrandNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Small_Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Big_Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Open_flg" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Createdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="channel">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ftype" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="pic" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="detail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="sort" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="up_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="product_message" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="cfm_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cCreDate" Type="DateTime" Precision="3" />
+    <Property Name="cCreUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cModDate" Type="DateTime" Precision="3" />
+    <Property Name="cModUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cCfmDate" Type="DateTime" Precision="3" />
+    <Property Name="cCfmUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentNo" />
+    </Key>
+    <Property Name="DepartmentNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BrandNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EndTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="day1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="day2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="day3" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="day4" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="day5" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="day6" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="day0" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="PositionX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PositionY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CouponMsg" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Introduce" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="PackageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Image2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Image3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="App" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Open_flg" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CutHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DyeHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PermHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CareHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Createdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Dept_Member">
+    <Key>
+      <PropertyRef Name="DepartmentNo" />
+      <PropertyRef Name="MemberNo" />
+    </Key>
+    <Property Name="DepartmentNo" Type="Int32" Nullable="false" />
+    <Property Name="MemberNo" Type="Int32" Nullable="false" />
+    <Property Name="Createdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Designer">
+    <Key>
+      <PropertyRef Name="DesignerNo" />
+    </Key>
+    <Property Name="DesignerNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DesignerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Introduce" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Createdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HairMsg">
+    <Key>
+      <PropertyRef Name="HairmsgNo" />
+    </Key>
+    <Property Name="HairmsgNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CutHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DyeHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PermHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CareHair" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="cContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Changedate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Headmsg">
+    <Key>
+      <PropertyRef Name="HeadmsgNo" />
+    </Key>
+    <Property Name="HeadmsgNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Headmsg1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberNo" />
+    </Key>
+    <Property Name="MemberNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sex" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BirthDate" Type="DateTime" Precision="3" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Token" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Createdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BrandNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="device" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Pushdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Member_Department">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MemberNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MemberOrder">
+    <Key>
+      <PropertyRef Name="MemberOrderNo" />
+    </Key>
+    <Property Name="MemberOrderNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MemberNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DesignerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ScheduleNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Service" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Confirm" Type="Boolean" />
+    <Property Name="ScheduleDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ScheduleTime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="OrderTime" Type="DateTime" Precision="3" />
+    <Property Name="PushNotice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PushNotConfirm" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="product_no" />
+    </Key>
+    <Property Name="product_no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ftype" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="brand_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="product_type_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ptype" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="detail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="fun_detail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="star" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="up_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="share" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="sort" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="pic_s" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="pic_l_type" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="pic_l" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="youtube" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Int32" />
+    <Property Name="price_favo" Type="Int32" />
+    <Property Name="on_shelf" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="off_shelf" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="remark" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="cfm_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cCreDate" Type="DateTime" Precision="3" />
+    <Property Name="cCreUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cModDate" Type="DateTime" Precision="3" />
+    <Property Name="cModUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cCfmDate" Type="DateTime" Precision="3" />
+    <Property Name="cCfmUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="source" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="product_type" Relationship="Model1.FK_product_product_type" FromRole="product" ToRole="product_type" />
+  </EntityType>
+  <EntityType Name="product_brand">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ftype" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="pic" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cfm_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cCreDate" Type="DateTime" Precision="3" />
+    <Property Name="cCreUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cModDate" Type="DateTime" Precision="3" />
+    <Property Name="cModUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cCfmDate" Type="DateTime" Precision="3" />
+    <Property Name="cCfmUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="source" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="product_channel">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="product_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="channel_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="store_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PushList">
+    <Key>
+      <PropertyRef Name="PushListNo" />
+    </Key>
+    <Property Name="PushListNo" Type="Int32" Nullable="false" />
+    <Property Name="MemberNo" Type="Int32" />
+    <Property Name="Token" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentNo" Type="Int32" />
+    <Property Name="PushDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PushTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Msg" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IsSend" Type="Boolean" />
+    <Property Name="Changedate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PushMsg">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="cIsEnable" Type="Byte" />
+    <Property Name="cPublishType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cPublishDate" Type="DateTime" Precision="3" />
+    <Property Name="cPublishTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cPublishAll" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MemberNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HeadmsgNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PushService">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="run" Type="Byte" />
+    <Property Name="run1date" Type="DateTime" Precision="3" />
+    <Property Name="run0date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ScheduleTable">
+    <Key>
+      <PropertyRef Name="ScheduleNo" />
+    </Key>
+    <Property Name="ScheduleNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DesignerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ScheduleDate" Type="DateTime" Precision="3" />
+    <Property Name="DType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Field0000" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0030" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0100" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0130" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0200" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0230" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0300" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0330" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0400" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0430" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0500" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0530" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0600" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0630" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0700" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0730" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0800" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0830" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0900" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field0930" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1000" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1030" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1100" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1130" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1200" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1230" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1300" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1330" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1400" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1430" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1500" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1530" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1600" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1630" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1700" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1730" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1800" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1830" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1900" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field1930" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field2000" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field2030" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field2100" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field2130" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field2200" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field2230" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field2300" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Field2330" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0000" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0030" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0100" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0130" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0200" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0230" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0300" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0330" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0400" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0430" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0500" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0530" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0600" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0630" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0700" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0730" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0800" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0830" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0900" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo0930" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1000" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1030" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1100" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1130" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1200" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1230" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1300" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1330" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1400" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1430" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1500" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1530" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1600" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1630" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1700" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1730" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1800" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1830" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1900" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo1930" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo2000" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo2030" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo2100" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo2130" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo2200" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo2230" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo2300" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Memo2330" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="store">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ftype" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="channel_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="pic" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="latitude" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="longitude" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cfm_flg" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cCreDate" Type="DateTime" Precision="3" />
+    <Property Name="cCreUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cModDate" Type="DateTime" Precision="3" />
+    <Property Name="cModUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cCfmDate" Type="DateTime" Precision="3" />
+    <Property Name="cCfmUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sys_pgdetail_group">
+    <Key>
+      <PropertyRef Name="sys_pgdetail_group_no" />
+    </Key>
+    <Property Name="sys_pgdetail_group_no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="sys_pgdetail_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="user_group_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sys_pgmaster_group">
+    <Key>
+      <PropertyRef Name="sys_pgmaster_group_no" />
+    </Key>
+    <Property Name="sys_pgmaster_group_no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="sys_pgmaster_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="user_group_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="user_group">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_product_product_type">
+    <End Type="Model1.product_type" Role="product_type" Multiplicity="0..1" />
+    <End Type="Model1.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product_type">
+        <PropertyRef Name="no" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="product_type_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

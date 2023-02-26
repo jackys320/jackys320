@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="misEntities2">
+    <EntitySetMapping Name="product_type">
+      <EntityTypeMapping TypeName="Model1.product_type">
+        <MappingFragment StoreEntitySet="product_type">
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="cCfmUser" ColumnName="cCfmUser" />
+          <ScalarProperty Name="cCfmDate" ColumnName="cCfmDate" />
+          <ScalarProperty Name="cModUser" ColumnName="cModUser" />
+          <ScalarProperty Name="cModDate" ColumnName="cModDate" />
+          <ScalarProperty Name="cCreUser" ColumnName="cCreUser" />
+          <ScalarProperty Name="cCreDate" ColumnName="cCreDate" />
+          <ScalarProperty Name="cfm_flg" ColumnName="cfm_flg" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_pgdetail">
+      <EntityTypeMapping TypeName="Model1.sys_pgdetail">
+        <MappingFragment StoreEntitySet="sys_pgdetail">
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sys_pgmaster_no" ColumnName="sys_pgmaster_no" />
+          <ScalarProperty Name="sys_pgdetail_no" ColumnName="sys_pgdetail_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_pgmaster">
+      <EntityTypeMapping TypeName="Model1.sys_pgmaster">
+        <MappingFragment StoreEntitySet="sys_pgmaster">
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sys_pgmaster_no" ColumnName="sys_pgmaster_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Model1.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Account">
+      <EntityTypeMapping TypeName="Model1.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+          <ScalarProperty Name="Logindate" ColumnName="Logindate" />
+          <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="channel_no" ColumnName="channel_no" />
+          <ScalarProperty Name="user_group_no" ColumnName="user_group_no" />
+          <ScalarProperty Name="Purview" ColumnName="Purview" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password_check" ColumnName="Password_check" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Account1" ColumnName="Account" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BirthMsg">
+      <EntityTypeMapping TypeName="Model1.BirthMsg">
+        <MappingFragment StoreEntitySet="BirthMsg">
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+          <ScalarProperty Name="cContent" ColumnName="cContent" />
+          <ScalarProperty Name="BirthmsgNo" ColumnName="BirthmsgNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brand">
+      <EntityTypeMapping TypeName="Model1.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+          <ScalarProperty Name="Open_flg" ColumnName="Open_flg" />
+          <ScalarProperty Name="Big_Image" ColumnName="Big_Image" />
+          <ScalarProperty Name="Small_Image" ColumnName="Small_Image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BrandNo" ColumnName="BrandNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="channel">
+      <EntityTypeMapping TypeName="Model1.channel">
+        <MappingFragment StoreEntitySet="channel">
+          <ScalarProperty Name="cCfmUser" ColumnName="cCfmUser" />
+          <ScalarProperty Name="cCfmDate" ColumnName="cCfmDate" />
+          <ScalarProperty Name="cModUser" ColumnName="cModUser" />
+          <ScalarProperty Name="cModDate" ColumnName="cModDate" />
+          <ScalarProperty Name="cCreUser" ColumnName="cCreUser" />
+          <ScalarProperty Name="cCreDate" ColumnName="cCreDate" />
+          <ScalarProperty Name="cfm_flg" ColumnName="cfm_flg" />
+          <ScalarProperty Name="product_message" ColumnName="product_message" />
+          <ScalarProperty Name="up_flg" ColumnName="up_flg" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ftype" ColumnName="ftype" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="Model1.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+          <ScalarProperty Name="CareHair" ColumnName="CareHair" />
+          <ScalarProperty Name="PermHair" ColumnName="PermHair" />
+          <ScalarProperty Name="DyeHair" ColumnName="DyeHair" />
+          <ScalarProperty Name="CutHair" ColumnName="CutHair" />
+          <ScalarProperty Name="Open_flg" ColumnName="Open_flg" />
+          <ScalarProperty Name="App" ColumnName="App" />
+          <ScalarProperty Name="Image3" ColumnName="Image3" />
+          <ScalarProperty Name="Image2" ColumnName="Image2" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="Introduce" ColumnName="Introduce" />
+          <ScalarProperty Name="CouponMsg" ColumnName="CouponMsg" />
+          <ScalarProperty Name="PositionY" ColumnName="PositionY" />
+          <ScalarProperty Name="PositionX" ColumnName="PositionX" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="day0" ColumnName="day0" />
+          <ScalarProperty Name="day6" ColumnName="day6" />
+          <ScalarProperty Name="day5" ColumnName="day5" />
+          <ScalarProperty Name="day4" ColumnName="day4" />
+          <ScalarProperty Name="day3" ColumnName="day3" />
+          <ScalarProperty Name="day2" ColumnName="day2" />
+          <ScalarProperty Name="day1" ColumnName="day1" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="BrandNo" ColumnName="BrandNo" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dept_Member">
+      <EntityTypeMapping TypeName="Model1.Dept_Member">
+        <MappingFragment StoreEntitySet="Dept_Member">
+          <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designer">
+      <EntityTypeMapping TypeName="Model1.Designer">
+        <MappingFragment StoreEntitySet="Designer">
+          <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Introduce" ColumnName="Introduce" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="DesignerName" ColumnName="DesignerName" />
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+          <ScalarProperty Name="DesignerNo" ColumnName="DesignerNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HairMsg">
+      <EntityTypeMapping TypeName="Model1.HairMsg">
+        <MappingFragment StoreEntitySet="HairMsg">
+          <ScalarProperty Name="Changedate" ColumnName="Changedate" />
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+          <ScalarProperty Name="cContent" ColumnName="cContent" />
+          <ScalarProperty Name="CareHair" ColumnName="CareHair" />
+          <ScalarProperty Name="PermHair" ColumnName="PermHair" />
+          <ScalarProperty Name="DyeHair" ColumnName="DyeHair" />
+          <ScalarProperty Name="CutHair" ColumnName="CutHair" />
+          <ScalarProperty Name="HairmsgNo" ColumnName="HairmsgNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Headmsg">
+      <EntityTypeMapping TypeName="Model1.Headmsg">
+        <MappingFragment StoreEntitySet="Headmsg">
+          <ScalarProperty Name="Headmsg1" ColumnName="Headmsg" />
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+          <ScalarProperty Name="HeadmsgNo" ColumnName="HeadmsgNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Member">
+      <EntityTypeMapping TypeName="Model1.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="Pushdate" ColumnName="Pushdate" />
+          <ScalarProperty Name="device" ColumnName="device" />
+          <ScalarProperty Name="BrandNo" ColumnName="BrandNo" />
+          <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Member_Department">
+      <EntityTypeMapping TypeName="Model1.Member_Department">
+        <MappingFragment StoreEntitySet="Member_Department">
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberOrder">
+      <EntityTypeMapping TypeName="Model1.MemberOrder">
+        <MappingFragment StoreEntitySet="MemberOrder">
+          <ScalarProperty Name="PushNotConfirm" ColumnName="PushNotConfirm" />
+          <ScalarProperty Name="PushNotice" ColumnName="PushNotice" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+          <ScalarProperty Name="ScheduleTime" ColumnName="ScheduleTime" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+          <ScalarProperty Name="Confirm" ColumnName="Confirm" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="ScheduleNo" ColumnName="ScheduleNo" />
+          <ScalarProperty Name="DesignerNo" ColumnName="DesignerNo" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="MemberOrderNo" ColumnName="MemberOrderNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product">
+      <EntityTypeMapping TypeName="Model1.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="cCfmUser" ColumnName="cCfmUser" />
+          <ScalarProperty Name="cCfmDate" ColumnName="cCfmDate" />
+          <ScalarProperty Name="cModUser" ColumnName="cModUser" />
+          <ScalarProperty Name="cModDate" ColumnName="cModDate" />
+          <ScalarProperty Name="cCreUser" ColumnName="cCreUser" />
+          <ScalarProperty Name="cCreDate" ColumnName="cCreDate" />
+          <ScalarProperty Name="cfm_flg" ColumnName="cfm_flg" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="off_shelf" ColumnName="off_shelf" />
+          <ScalarProperty Name="on_shelf" ColumnName="on_shelf" />
+          <ScalarProperty Name="price_favo" ColumnName="price_favo" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="youtube" ColumnName="youtube" />
+          <ScalarProperty Name="pic_l" ColumnName="pic_l" />
+          <ScalarProperty Name="pic_l_type" ColumnName="pic_l_type" />
+          <ScalarProperty Name="pic_s" ColumnName="pic_s" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="share" ColumnName="share" />
+          <ScalarProperty Name="up_flg" ColumnName="up_flg" />
+          <ScalarProperty Name="star" ColumnName="star" />
+          <ScalarProperty Name="fun_detail" ColumnName="fun_detail" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="ptype" ColumnName="ptype" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="product_type_no" ColumnName="product_type_no" />
+          <ScalarProperty Name="brand_no" ColumnName="brand_no" />
+          <ScalarProperty Name="ftype" ColumnName="ftype" />
+          <ScalarProperty Name="product_no" ColumnName="product_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product_brand">
+      <EntityTypeMapping TypeName="Model1.product_brand">
+        <MappingFragment StoreEntitySet="product_brand">
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="cCfmUser" ColumnName="cCfmUser" />
+          <ScalarProperty Name="cCfmDate" ColumnName="cCfmDate" />
+          <ScalarProperty Name="cModUser" ColumnName="cModUser" />
+          <ScalarProperty Name="cModDate" ColumnName="cModDate" />
+          <ScalarProperty Name="cCreUser" ColumnName="cCreUser" />
+          <ScalarProperty Name="cCreDate" ColumnName="cCreDate" />
+          <ScalarProperty Name="cfm_flg" ColumnName="cfm_flg" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ftype" ColumnName="ftype" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product_channel">
+      <EntityTypeMapping TypeName="Model1.product_channel">
+        <MappingFragment StoreEntitySet="product_channel">
+          <ScalarProperty Name="store_no" ColumnName="store_no" />
+          <ScalarProperty Name="channel_no" ColumnName="channel_no" />
+          <ScalarProperty Name="product_no" ColumnName="product_no" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PushList">
+      <EntityTypeMapping TypeName="Model1.PushList">
+        <MappingFragment StoreEntitySet="PushList">
+          <ScalarProperty Name="Changedate" ColumnName="Changedate" />
+          <ScalarProperty Name="IsSend" ColumnName="IsSend" />
+          <ScalarProperty Name="Msg" ColumnName="Msg" />
+          <ScalarProperty Name="PushTime" ColumnName="PushTime" />
+          <ScalarProperty Name="PushDate" ColumnName="PushDate" />
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="PushListNo" ColumnName="PushListNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PushMsg">
+      <EntityTypeMapping TypeName="Model1.PushMsg">
+        <MappingFragment StoreEntitySet="PushMsg">
+          <ScalarProperty Name="HeadmsgNo" ColumnName="HeadmsgNo" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+          <ScalarProperty Name="cPublishAll" ColumnName="cPublishAll" />
+          <ScalarProperty Name="cPublishTime" ColumnName="cPublishTime" />
+          <ScalarProperty Name="cPublishDate" ColumnName="cPublishDate" />
+          <ScalarProperty Name="cPublishType" ColumnName="cPublishType" />
+          <ScalarProperty Name="cIsEnable" ColumnName="cIsEnable" />
+          <ScalarProperty Name="cContent" ColumnName="cContent" />
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PushService">
+      <EntityTypeMapping TypeName="Model1.PushService">
+        <MappingFragment StoreEntitySet="PushService">
+          <ScalarProperty Name="run0date" ColumnName="run0date" />
+          <ScalarProperty Name="run1date" ColumnName="run1date" />
+          <ScalarProperty Name="run" ColumnName="run" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScheduleTable">
+      <EntityTypeMapping TypeName="Model1.ScheduleTable">
+        <MappingFragment StoreEntitySet="ScheduleTable">
+          <ScalarProperty Name="Memo2330" ColumnName="Memo2330" />
+          <ScalarProperty Name="Memo2300" ColumnName="Memo2300" />
+          <ScalarProperty Name="Memo2230" ColumnName="Memo2230" />
+          <ScalarProperty Name="Memo2200" ColumnName="Memo2200" />
+          <ScalarProperty Name="Memo2130" ColumnName="Memo2130" />
+          <ScalarProperty Name="Memo2100" ColumnName="Memo2100" />
+          <ScalarProperty Name="Memo2030" ColumnName="Memo2030" />
+          <ScalarProperty Name="Memo2000" ColumnName="Memo2000" />
+          <ScalarProperty Name="Memo1930" ColumnName="Memo1930" />
+          <ScalarProperty Name="Memo1900" ColumnName="Memo1900" />
+          <ScalarProperty Name="Memo1830" ColumnName="Memo1830" />
+          <ScalarProperty Name="Memo1800" ColumnName="Memo1800" />
+          <ScalarProperty Name="Memo1730" ColumnName="Memo1730" />
+          <ScalarProperty Name="Memo1700" ColumnName="Memo1700" />
+          <ScalarProperty Name="Memo1630" ColumnName="Memo1630" />
+          <ScalarProperty Name="Memo1600" ColumnName="Memo1600" />
+          <ScalarProperty Name="Memo1530" ColumnName="Memo1530" />
+          <ScalarProperty Name="Memo1500" ColumnName="Memo1500" />
+          <ScalarProperty Name="Memo1430" ColumnName="Memo1430" />
+          <ScalarProperty Name="Memo1400" ColumnName="Memo1400" />
+          <ScalarProperty Name="Memo1330" ColumnName="Memo1330" />
+          <ScalarProperty Name="Memo1300" ColumnName="Memo1300" />
+          <ScalarProperty Name="Memo1230" ColumnName="Memo1230" />
+          <ScalarProperty Name="Memo1200" ColumnName="Memo1200" />
+          <ScalarProperty Name="Memo1130" ColumnName="Memo1130" />
+          <ScalarProperty Name="Memo1100" ColumnName="Memo1100" />
+          <ScalarProperty Name="Memo1030" ColumnName="Memo1030" />
+          <ScalarProperty Name="Memo1000" ColumnName="Memo1000" />
+          <ScalarProperty Name="Memo0930" ColumnName="Memo0930" />
+          <ScalarProperty Name="Memo0900" ColumnName="Memo0900" />
+          <ScalarProperty Name="Memo0830" ColumnName="Memo0830" />
+          <ScalarProperty Name="Memo0800" ColumnName="Memo0800" />
+          <ScalarProperty Name="Memo0730" ColumnName="Memo0730" />
+          <ScalarProperty Name="Memo0700" ColumnName="Memo0700" />
+          <ScalarProperty Name="Memo0630" ColumnName="Memo0630" />
+          <ScalarProperty Name="Memo0600" ColumnName="Memo0600" />
+          <ScalarProperty Name="Memo0530" ColumnName="Memo0530" />
+          <ScalarProperty Name="Memo0500" ColumnName="Memo0500" />
+          <ScalarProperty Name="Memo0430" ColumnName="Memo0430" />
+          <ScalarProperty Name="Memo0400" ColumnName="Memo0400" />
+          <ScalarProperty Name="Memo0330" ColumnName="Memo0330" />
+          <ScalarProperty Name="Memo0300" ColumnName="Memo0300" />
+          <ScalarProperty Name="Memo0230" ColumnName="Memo0230" />
+          <ScalarProperty Name="Memo0200" ColumnName="Memo0200" />
+          <ScalarProperty Name="Memo0130" ColumnName="Memo0130" />
+          <ScalarProperty Name="Memo0100" ColumnName="Memo0100" />
+          <ScalarProperty Name="Memo0030" ColumnName="Memo0030" />
+          <ScalarProperty Name="Memo0000" ColumnName="Memo0000" />
+          <ScalarProperty Name="Field2330" ColumnName="Field2330" />
+          <ScalarProperty Name="Field2300" ColumnName="Field2300" />
+          <ScalarProperty Name="Field2230" ColumnName="Field2230" />
+          <ScalarProperty Name="Field2200" ColumnName="Field2200" />
+          <ScalarProperty Name="Field2130" ColumnName="Field2130" />
+          <ScalarProperty Name="Field2100" ColumnName="Field2100" />
+          <ScalarProperty Name="Field2030" ColumnName="Field2030" />
+          <ScalarProperty Name="Field2000" ColumnName="Field2000" />
+          <ScalarProperty Name="Field1930" ColumnName="Field1930" />
+          <ScalarProperty Name="Field1900" ColumnName="Field1900" />
+          <ScalarProperty Name="Field1830" ColumnName="Field1830" />
+          <ScalarProperty Name="Field1800" ColumnName="Field1800" />
+          <ScalarProperty Name="Field1730" ColumnName="Field1730" />
+          <ScalarProperty Name="Field1700" ColumnName="Field1700" />
+          <ScalarProperty Name="Field1630" ColumnName="Field1630" />
+          <ScalarProperty Name="Field1600" ColumnName="Field1600" />
+          <ScalarProperty Name="Field1530" ColumnName="Field1530" />
+          <ScalarProperty Name="Field1500" ColumnName="Field1500" />
+          <ScalarProperty Name="Field1430" ColumnName="Field1430" />
+          <ScalarProperty Name="Field1400" ColumnName="Field1400" />
+          <ScalarProperty Name="Field1330" ColumnName="Field1330" />
+          <ScalarProperty Name="Field1300" ColumnName="Field1300" />
+          <ScalarProperty Name="Field1230" ColumnName="Field1230" />
+          <ScalarProperty Name="Field1200" ColumnName="Field1200" />
+          <ScalarProperty Name="Field1130" ColumnName="Field1130" />
+          <ScalarProperty Name="Field1100" ColumnName="Field1100" />
+          <ScalarProperty Name="Field1030" ColumnName="Field1030" />
+          <ScalarProperty Name="Field1000" ColumnName="Field1000" />
+          <ScalarProperty Name="Field0930" ColumnName="Field0930" />
+          <ScalarProperty Name="Field0900" ColumnName="Field0900" />
+          <ScalarProperty Name="Field0830" ColumnName="Field0830" />
+          <ScalarProperty Name="Field0800" ColumnName="Field0800" />
+          <ScalarProperty Name="Field0730" ColumnName="Field0730" />
+          <ScalarProperty Name="Field0700" ColumnName="Field0700" />
+          <ScalarProperty Name="Field0630" ColumnName="Field0630" />
+          <ScalarProperty Name="Field0600" ColumnName="Field0600" />
+          <ScalarProperty Name="Field0530" ColumnName="Field0530" />
+          <ScalarProperty Name="Field0500" ColumnName="Field0500" />
+          <ScalarProperty Name="Field0430" ColumnName="Field0430" />
+          <ScalarProperty Name="Field0400" ColumnName="Field0400" />
+          <ScalarProperty Name="Field0330" ColumnName="Field0330" />
+          <ScalarProperty Name="Field0300" ColumnName="Field0300" />
+          <ScalarProperty Name="Field0230" ColumnName="Field0230" />
+          <ScalarProperty Name="Field0200" ColumnName="Field0200" />
+          <ScalarProperty Name="Field0130" ColumnName="Field0130" />
+          <ScalarProperty Name="Field0100" ColumnName="Field0100" />
+          <ScalarProperty Name="Field0030" ColumnName="Field0030" />
+          <ScalarProperty Name="Field0000" ColumnName="Field0000" />
+          <ScalarProperty Name="DType" ColumnName="DType" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+          <ScalarProperty Name="DesignerNo" ColumnName="DesignerNo" />
+          <ScalarProperty Name="ScheduleNo" ColumnName="ScheduleNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store">
+      <EntityTypeMapping TypeName="Model1.store">
+        <MappingFragment StoreEntitySet="store">
+          <ScalarProperty Name="cCfmUser" ColumnName="cCfmUser" />
+          <ScalarProperty Name="cCfmDate" ColumnName="cCfmDate" />
+          <ScalarProperty Name="cModUser" ColumnName="cModUser" />
+          <ScalarProperty Name="cModDate" ColumnName="cModDate" />
+          <ScalarProperty Name="cCreUser" ColumnName="cCreUser" />
+          <ScalarProperty Name="cCreDate" ColumnName="cCreDate" />
+          <ScalarProperty Name="cfm_flg" ColumnName="cfm_flg" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="channel_no" ColumnName="channel_no" />
+          <ScalarProperty Name="ftype" ColumnName="ftype" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_pgdetail_group">
+      <EntityTypeMapping TypeName="Model1.sys_pgdetail_group">
+        <MappingFragment StoreEntitySet="sys_pgdetail_group">
+          <ScalarProperty Name="user_group_no" ColumnName="user_group_no" />
+          <ScalarProperty Name="sys_pgdetail_no" ColumnName="sys_pgdetail_no" />
+          <ScalarProperty Name="sys_pgdetail_group_no" ColumnName="sys_pgdetail_group_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_pgmaster_group">
+      <EntityTypeMapping TypeName="Model1.sys_pgmaster_group">
+        <MappingFragment StoreEntitySet="sys_pgmaster_group">
+          <ScalarProperty Name="user_group_no" ColumnName="user_group_no" />
+          <ScalarProperty Name="sys_pgmaster_no" ColumnName="sys_pgmaster_no" />
+          <ScalarProperty Name="sys_pgmaster_group_no" ColumnName="sys_pgmaster_group_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_group">
+      <EntityTypeMapping TypeName="Model1.user_group">
+        <MappingFragment StoreEntitySet="user_group">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

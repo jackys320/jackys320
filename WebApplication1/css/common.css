@@ -1,0 +1,27 @@
+
+
+.redText {
+	COLOR: red;
+}
+.errorText {
+	COLOR: red;
+	font-weight:bold;
+}
+
+.blodText {
+	font-weight:bold;
+}
+
+.normalButton {
+	height: 23px;
+	width: 90px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	background-color: #3c3c3c;
+}
+
+.normalTh {
+	width: 180px;
+}
+

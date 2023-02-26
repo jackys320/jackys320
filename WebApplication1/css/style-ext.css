@@ -1,0 +1,293 @@
+.text_blue_12_right {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #3C7CBB;
+	text-align: right;
+}
+.text_blue_12_center {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #3C7CBB;
+	text-align: center;
+}
+
+.text_gray_12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #CCCCCC;
+}
+.text_gray_12_right {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #CCCCCC;
+	text-align: right;
+}
+.text_gray_12_center {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #CCCCCC;
+	text-align: center;
+}
+
+.text_bold_12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight:bold;
+}
+
+.text_red_10 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color:#FF0000;
+}
+
+.text_12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.text_12_center {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+
+.cancelsms_table_canceled {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.cancelsms_table_canceled a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #CCCCCC;
+	text-decoration: none;
+}
+.cancelsms_table_canceled a:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#FF0000;
+	text-decoration: underline;
+}
+
+.cancelsms_table_canceled a:link{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #3C7CBB;
+	text-decoration: none;
+}	
+	
+
+.report_table {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.report_table a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #3C7CBB;
+	text-decoration: none;
+}
+.report_table a:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#FF0000;
+	text-decoration: underline;
+}
+
+.report_table a:link{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #3C7CBB;
+	text-decoration: none;
+}
+
+
+.from_buttom_larger {
+	height: 17px;
+	width: 80px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	background-color: #3c3c3c;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #E2E2E2;
+	border-right-color: #555555;
+	border-bottom-color: #555555;
+	border-left-color: #E2E2E2;
+}	
+
+.from_buttom_100 {
+	height: 17px;
+	width: 100px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	background-color: #3c3c3c;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #E2E2E2;
+	border-right-color: #555555;
+	border-bottom-color: #555555;
+	border-left-color: #E2E2E2;
+}
+
+.from_buttom_80 {
+	height: 17px;
+	width: 80px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	background-color: #3c3c3c;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #E2E2E2;
+	border-right-color: #555555;
+	border-bottom-color: #555555;
+	border-left-color: #E2E2E2;
+}
+
+.from_buttom_70 {
+	height: 17px;
+	width: 70px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	background-color: #3c3c3c;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #E2E2E2;
+	border-right-color: #555555;
+	border-bottom-color: #555555;
+	border-left-color: #E2E2E2;
+}
+
+
+.from_buttom_60 {
+	height: 17px;
+	width: 60px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	background-color: #3c3c3c;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #E2E2E2;
+	border-right-color: #555555;
+	border-bottom-color: #555555;
+	border-left-color: #E2E2E2;
+}	
+
+.from_buttom_50 {
+	height: 17px;
+	width: 50px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	background-color: #3c3c3c;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #E2E2E2;
+	border-right-color: #555555;
+	border-bottom-color: #555555;
+	border-left-color: #E2E2E2;
+}
+
+.from_input1 {
+	height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #5A5A5A;
+	border-right-color: #E6E6E6;
+	border-bottom-color: #E6E6E6;
+	border-left-color: #5A5A5A;
+	padding: 2px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+
+.TdColor1 {
+}
+.TdColor2 {
+	BACKGROUND-COLOR: #ccccff;
+}
+
+.visible {
+	visibility:visible;
+}
+.unvisible {
+	visibility:hidden;
+	display:none;
+}

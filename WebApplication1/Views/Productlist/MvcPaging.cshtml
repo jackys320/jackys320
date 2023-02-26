@@ -1,0 +1,167 @@
+﻿@model WebApplication1.Models.ProductViewModel
+
+@{
+    //Layout = null;
+    Layout = "~/Views/Home/Layout_mis.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+    @Styles.Render("~/Content/jqueryui")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    <style>
+        .pager {
+            margin: 8px 3px;
+            padding: 3px;
+        }
+
+            .pager .disabled {
+                border: 1px solid #ddd;
+                color: #999;
+                margin-top: 4px;
+                padding: 3px;
+                text-align: center;
+            }
+
+            .pager .current {
+                background-color: #6ea9bf;
+                border: 1px solid #6e99aa;
+                color: #fff;
+                font-weight: bold;
+                margin-top: 4px;
+                padding: 3px 5px;
+                text-align: center;
+            }
+
+            .pager span, .pager a {
+                margin: 4px 3px;
+            }
+
+            .pager a {
+                border: 1px solid #aaa;
+                padding: 3px 5px;
+                text-align: center;
+                text-decoration: none;
+            }
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //設定中文語系
+            $.datepicker.regional['zh-TW'] = {
+                clearText: '清除', clearStatus: '清除已選日期',
+                closeText: '關閉', closeStatus: '取消選擇',
+                prevText: '<上一月', prevStatus: '顯示上個月',
+                nextText: '下一月>', nextStatus: '顯示下個月',
+                currentText: '今天', currentStatus: '顯示本月',
+                monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                    '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                monthNamesShort: ['一', '二', '三', '四', '五', '六',
+                    '七', '八', '九', '十', '十一', '十二'],
+                monthStatus: '選擇月份', yearStatus: '選擇年份',
+                weekHeader: '周', weekStatus: '',
+                dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+                dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+                dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+                dayStatus: '設定每周第一天', dateStatus: '選擇 m月 d日, DD',
+                dateFormat: 'yy-mm-dd', firstDay: 1,
+                initStatus: '請選擇日期', isRTL: false
+            };
+            //將預設語系設定為中文
+            $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
+            //套用到表單
+            $(".datepicker").datepicker({
+                        dateFormat: "yy-mm-dd",
+                        changeYear : true,
+                        changeMonth: true,
+                        beforeShow: function () {
+                            //$(".ui-datepicker").css('font-size', 24);
+                            $(".ui-datepicker").css('family-name', '微軟正黑體')
+                        }
+        });
+    });
+    </script>
+</head>
+<body>
+    <div> 
+        <h3>Search Product</h3>
+
+        @using (Html.BeginForm("MvcPaging", "Productlist", FormMethod.Post, new { id = "ProductList" }))
+        {
+            <table class="table-condensed">
+                <tr>
+                    <td>產品代號</td>
+                    <td> @Html.EditorFor(model => model.product_no, new { htmlAttributes = new { @class = "form-control datepicker" } })</td>
+                    <td> <input class="datepicker" id="product_no2" name="product_no2" type="text" value="" /></td>
+                    <td>名稱</td>
+                    <td> @Html.EditorFor(model => model.name) </td>
+                    <td> <input type="submit" value="Search" /> </td>
+                </tr>
+            </table>
+
+            if (Model.Products != null && Model.Products.Count() > 0)
+            {
+
+                <table class="table">
+                    <tr>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Name)*@
+                            @Html.DisplayNameFor(model => model.Products.First().product_no)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Products.First().name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Products.First().price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Products.First().product_type.name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Products.First().remark)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model.Products)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.product_no)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.product_type.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.remark)
+                            </td>
+                            <td>
+                                @Html.ActionLink("加入購物車", "AddInCart", new { id = item.product_no })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+
+                <div class="pager">
+                    @Html.Pager(Model.Products.PageSize, Model.Products.PageNumber, Model.Products.TotalItemCount)
+                    Displaying @Model.Products.ItemStart - @Model.Products.ItemEnd of @Model.Products.TotalItemCount item(s)
+                </div>
+
+            }
+        }
+
+    </div>
+</body>
+</html>

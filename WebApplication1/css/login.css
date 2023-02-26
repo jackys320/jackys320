@@ -1,0 +1,17 @@
+body {
+	background-image: url(../images/bg.gif);
+}
+.input {
+	PADDING-RIGHT: 1px;
+	PADDING-LEFT: 1px;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12px;
+	PADDING-BOTTOM: 1px;
+	WIDTH: 170px;
+	COLOR: #333333;
+	PADDING-TOP: 1px;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	HEIGHT: auto;
+	BACKGROUND-COLOR: #FFFFFF;
+	border: 1px solid #AFAFAF;
+}

@@ -1,0 +1,193 @@
+﻿@model WebApplication1.Models.MreportViewModelSQL
+
+@{
+    //Layout = null;
+    Layout = "~/Views/Home/Layout_mis.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+    <style>
+        .pager {
+            margin: 8px 3px;
+            padding: 3px;
+        }
+
+            .pager .disabled {
+                border: 1px solid #ddd;
+                color: #999;
+                margin-top: 4px;
+                padding: 3px;
+                text-align: center;
+            }
+
+            .pager .current {
+                background-color: #6ea9bf;
+                border: 1px solid #6e99aa;
+                color: #fff;
+                font-weight: bold;
+                margin-top: 4px;
+                padding: 3px 5px;
+                text-align: center;
+            }
+
+            .pager span, .pager a {
+                margin: 4px 3px;
+            }
+
+            .pager a {
+                border: 1px solid #aaa;
+                padding: 3px 5px;
+                text-align: center;
+                text-decoration: none;
+            }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h3>MreportMvcPaging</h3>
+
+        <p>
+            @Html.ActionLink("新增", "MreportCreate", new { yy = Model.yy, mm = Model.mm, Model })
+        </p>
+
+        @using (Html.BeginForm("MreportMvcPaging", "Purchase", FormMethod.Post, new { id = "MreportList" }))
+        {
+            <table class="table-condensed">
+                <tr>
+                    <td>年份：</td>
+                    <td> @Html.EditorFor(model => model.yy)</td>
+                    <td>
+                        月份：@Html.DropDownList("mm", (IEnumerable<SelectListItem>)ViewData["mmlist"])
+                    </td>
+                    <td> <input type="submit" value="Search" /> </td>
+                </tr>
+            </table>
+
+            if (Model.MreportQuerySQL != null && Model.MreportQuerySQL.Count() > 0)
+            {
+
+                <table class="table">
+                    <tr>
+                        <th>編輯
+                        </th>
+                        <th>刪除
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Name)*@
+                            @Html.DisplayNameFor(model => model.MreportQuerySQL.First().yy)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MreportQuerySQL.First().mm)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MreportQuerySQL.First().m_no)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MreportQuerySQL.First().it_name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MreportQuerySQL.First().spec)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MreportQuerySQL.First().price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MreportQuerySQL.First().unit)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MreportQuerySQL.First().qty)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MreportQuerySQL.First().remark)
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model.MreportQuerySQL)
+                    {
+                        <tr>
+                            <td>
+                                @Html.ActionLink("編輯", "MreportEdit", new { id = item.m_no })
+                            </td>
+                            <td>
+                                @Html.ActionLink("刪除", "MreportDelete", new { id = item.m_no }, new { onclick = "return confirm('是否確認删除?')" })
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.yy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.mm)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.m_no)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.it_name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.spec)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.unit)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.qty)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.remark)
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+
+                <div class="pager">
+                    @Html.Pager(Model.MreportQuerySQL.PageSize, Model.MreportQuerySQL.PageNumber, Model.MreportQuerySQL.TotalItemCount)
+                    Displaying @Model.MreportQuerySQL.ItemStart - @Model.MreportQuerySQL.ItemEnd of @Model.MreportQuerySQL.TotalItemCount item(s)
+                </div>
+
+            }
+        }
+
+    </div>
+</body>
+</html>
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+                alert(ViewBag.Message);
+    </script>
+}
+@if ((String)Session["Status"] == "修改完成")
+{
+    <script type="text/javascript">
+                alert("修改完成");
+    </script>
+}
+@if ((String)Session["Status"] != null)
+{
+    <script type="text/javascript">
+                alert("@((String)Session["Status"]);");
+    </script>
+}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+@if ((String)Session["Status"] != null)
+{
+    <script type="text/javascript">
+            $(function () {
+                alert("@((String)Session["Status"])");
+            });
+    </script>
+    Session["Status"] = null;
+}
+
+

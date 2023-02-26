@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="purchaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="mreport">
+    <Key>
+      <PropertyRef Name="m_no" />
+    </Key>
+    <Property Name="m_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="yl_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="yy" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mm" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="it_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="st_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="qty" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="create_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <Property Name="modi_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modi_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="btype">
+    <Key>
+      <PropertyRef Name="bt_no" />
+    </Key>
+    <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="bt_name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="dreport">
+    <Key>
+      <PropertyRef Name="d_no" />
+      <PropertyRef Name="yl_id" />
+      <PropertyRef Name="yy" />
+      <PropertyRef Name="mm" />
+      <PropertyRef Name="it_no" />
+      <PropertyRef Name="bt_no" />
+      <PropertyRef Name="mt_no" />
+      <PropertyRef Name="st_no" />
+    </Key>
+    <Property Name="d_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="yl_id" Type="Int32" Nullable="false" />
+    <Property Name="yy" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mm" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="it_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="st_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="qty" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="create_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <Property Name="modi_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modi_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="it_no" />
+      <PropertyRef Name="bt_no" />
+      <PropertyRef Name="mt_no" />
+      <PropertyRef Name="st_no" />
+      <PropertyRef Name="mk_no" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="it_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="it_name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="st_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mk_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="spec" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="unit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="remark" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="make">
+    <Key>
+      <PropertyRef Name="mk_no" />
+    </Key>
+    <Property Name="mk_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mk_name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mm">
+    <Key>
+      <PropertyRef Name="mm1" />
+    </Key>
+    <Property Name="mm1" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mm_name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mtype">
+    <Key>
+      <PropertyRef Name="mt_no" />
+      <PropertyRef Name="mt_name" />
+    </Key>
+    <Property Name="mt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mt_name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="stype">
+    <Key>
+      <PropertyRef Name="st_no" />
+    </Key>
+    <Property Name="st_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="st_name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="mt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="purchaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mreport" EntityType="Self.mreport" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="btype" EntityType="Self.btype" />
+    <EntitySet Name="dreport" EntityType="Self.dreport" />
+    <EntitySet Name="item" EntityType="Self.item" />
+    <EntitySet Name="make" EntityType="Self.make" />
+    <EntitySet Name="mm" EntityType="Self.mm" />
+    <EntitySet Name="mtype" EntityType="Self.mtype" />
+    <EntitySet Name="stype" EntityType="Self.stype" />
+  </EntityContainer>
+</Schema>

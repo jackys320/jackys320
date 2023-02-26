@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+.hiddenDiv {
+	visibility:hidden; 
+	display:none;
+	z-index: 1;
+}
+
+.visibleDiv {
+	visibility:visible; 
+	position: absolute;
+	border:#ffffff; 
+	top: 100px; 
+	left: 210px; 
+	width: 100px; 
+	height: 100px; 
+	background-color:yellow; 
+	z-index: 100;
+}

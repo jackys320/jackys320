@@ -1,0 +1,163 @@
+﻿ @charset "utf-8";
+/* CSS Document */
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #666666;
+		}
+
+.standard_date {	}
+
+.box_top {margin-top:60px; color:#024191;}
+
+/*快速選單*/	
+.topmenu {
+	font-size: 13px;
+	color: #ffffff;
+	text-decoration: none;
+	letter-spacing: normal;
+	font-weight: normal;
+	padding-right: 5px;
+	padding-left: 5px;
+	}
+	.topmenu a:link {color: #ffffff;text-decoration: none;}
+	.topmenu a:visited {color: #ffffff;text-decoration: none;}	
+	.topmenu a:hover {color:#FF9900;text-decoration: none;}
+
+.bar{font-size: 16px; color: #ffffff;font-weight:bold;	font-family: Verdana, Arial, Helvetica, sans-serif;	}
+
+
+.box01{ border:solid 1px #CCCCCC; margin-bottom:8px;}
+.donwn_line{
+	border-bottom: solid 1px #CCCCCC;
+	height: 25px;
+	padding: 0 5px 0 5px;
+	text-align: center;
+}
+.down_bg{ background-image:url(images/down_bg.jpg); background-repeat:repeat-x; width:100%; height:48px;}
+
+.down_txt{font-size: 11px; color: #95acf0;font-weight:bold; background-image:url(images/login_06.jpg); background-repeat:no-repeat;	
+			font-family: Verdana, Arial, Helvetica, sans-serif; padding:25px 0px 0px ;}
+
+
+
+/* 輸入欄位 */
+.email_block {
+	font-size: 12px;
+	color: #999999;
+	text-decoration: none;
+	letter-spacing: normal;
+	border: 1px solid #999999;
+	background-position: center;
+	height: 16px;
+	background-color: #ffffff;
+}
+.email_block2 {
+	font-size: 12px;
+	color: #999999;
+	text-decoration: none;
+	letter-spacing: normal;
+	border: 1px solid #999999;
+	background-position: center;
+	background-color: #ffffff;
+}
+
+.textboxreadonly 
+{	
+	background-color: #E0E0E0;
+}
+/*==============     Form Table     ==================*/
+#formtable {
+	POSITION: relative; 	
+	OVERFLOW: visible; /*auto; */
+	WIDTH:98%;
+	font-size:13px;
+}
+#formtable table tr td.tbTitle {
+	/*filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FFFFFF,EndColorStr=#1783C3);*/
+	height:29px; 
+	text-align: right;
+	cursor:hand;
+	color:#000;
+}
+#formtable table {
+	background-color:#000000;
+}
+
+#formtable table tr td span{
+	
+	background: #fbfbfb;
+	padding: 0px 20px;
+	height: 29px;
+	line-height: 29px;
+	border-bottom: 0px;
+}
+
+/*==============     Form Table     ==================*/
+
+/*==============     Gridview     ==================*/
+#gridview {
+	POSITION: relative; 
+	
+	OVERFLOW: auto; 
+	WIDTH:95%;
+}
+
+#gridview table {
+	background-color:#000000;
+}
+
+#gridview table tr th {
+	/*filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FFFFFF,EndColorStr=#CCCCCC);*/
+	height:29px; 
+	text-align: center;
+	font-weight:normal;
+	padding-right:5px; 
+	padding-left:5px;
+	cursor:hand;
+	background-color:#EDEDED;
+	color:#000;
+}
+
+#gridview table tr td {
+	background: #fbfbfb;
+	padding: 0px 10px;
+	height: 29px;
+	line-height: 29px;
+	white-space: nowrap;
+}
+
+#gridview table tr.odd td {
+	background: #FFFFCC;
+	white-space: nowrap;
+}
+
+#gridview table tr:hover td { background: #EFFD9F; }
+
+#gridview table .action {
+	margin: 0 0 0 0px;
+}
+
+#gridview table tr .action a { margin: 0 0 0 0px; text-decoration: none; color: #2716F8; }
+#gridview table tr:hover .action .edit { color: #c5a059; text-decoration: none; }
+#gridview table tr:hover .action .delete { color: #a02b2b; text-decoration: none; }
+#gridview table tr:hover .action .view { color: #55a34a; text-decoration: none; }
+
+#gridview table tr:hover .action a:hover { text-decoration: underline; }
+
+#gridview table tr td.NoVisabled {
+	color:#fbfbfb;
+}
+
+#gridview table tr.odd td.NoVisabled 
+{
+	color:#E1F0FF;
+}
+
+#gridview table tr:hover td.NoVisabled { color:#EFFD9F; }
+/*==============     Gridview     ==================*/

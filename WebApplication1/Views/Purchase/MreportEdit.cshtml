@@ -1,0 +1,144 @@
+﻿@model WebApplication1.Models.MreportSQL
+
+@{
+    //Layout = null;
+    Layout = "~/Views/Home/Layout_mis.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MreportEdit</title>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.12.4.min.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Method2
+            $('#bt').change(function () { bt(); });
+        });
+        function itemclear() {
+            $('#it').empty();
+            //$('#CountyDDL').append($('< option ></option > ').val('').text('請選擇'));
+        }
+        function bt() {
+
+            var bt_no = $.trim($('#bt option:selected').val());
+            //alert(bt_no);
+            if (bt_no.length == 0) {
+                itemclear();
+            }
+            else {
+                itemclear();
+                $.ajax(
+                    {
+                        url: "@Url.Action("itlist", "Purchase")",
+                        data: { bt_no: bt_no },
+                        type: 'post',
+                        cache: false,
+                        async: false,
+                        dataType: 'html',
+                        success: function (data) {
+                            if (data.length > 0) {
+                                //alert(data);
+                                $('#it').append(data);
+                            }
+                        }
+                    });
+            }
+        }
+    </script>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>MreportEdit</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.m_no)
+            <div class="form-group">
+                @Html.LabelFor(model => model.yy, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.yy, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.yy, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.mm, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.mm, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.mm, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.bt_no, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.bt_no, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.bt_no, "", new { @class = "text-danger" })
+                    @* @Html.DropDownList("bt_no", (IEnumerable<SelectListItem>)ViewData["btlist"], "請選擇") *@
+                    @Html.DropDownList("bt", (IEnumerable<SelectListItem>)ViewData["btlist"])
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.st_no, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.st_no, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.st_no, "", new { @class = "text-danger" })
+                    @* @Html.DropDownList("st_no", (IEnumerable<SelectListItem>)ViewData["stlist"], "請選擇") *@
+                    @Html.DropDownList("st", (IEnumerable<SelectListItem>)ViewData["stlist"])
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.it_no, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.it_no, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.it_no, "", new { @class = "text-danger" })
+                    @* @Html.DropDownList("it_no", (IEnumerable<SelectListItem>)ViewData["itlist"], "請選擇") *@
+                    @Html.DropDownList("it", (IEnumerable<SelectListItem>)ViewData["itlist"])
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.it_name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.it_name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.it_name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.qty, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.qty, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.qty, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.remark, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.remark, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.remark, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "MreportSQLMvcPaging", new { id = "" }, new { onclick = "javascript:window.history.go(-1);return false;" })
+    </div>
+</body>
+</html>

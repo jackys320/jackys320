@@ -1,0 +1,15 @@
+﻿@model  WebApplication1.Models.Menu
+
+<div>
+    <ul>
+        @foreach (var parentMenu in Model.sys_pgmaster)
+                {
+            <li>@Html.ActionLink(@parentMenu.name, "Index", "Home")</li>
+            foreach (var childMenu in Model.sys_pgdetail)
+            {
+                <li>@Html.ActionLink(@childMenu.name, "Index", "Home")</li>
+            }
+        }
+    </ul>
+</div>
+

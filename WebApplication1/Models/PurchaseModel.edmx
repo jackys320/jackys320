@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="purchaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'purchase.dbo.btype' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="btype">
+          <Key>
+            <PropertyRef Name="bt_no" />
+          </Key>
+          <Property Name="bt_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="bt_name" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'purchase.dbo.dreport' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="dreport">
+          <Key>
+            <PropertyRef Name="d_no" />
+            <PropertyRef Name="yl_id" />
+            <PropertyRef Name="yy" />
+            <PropertyRef Name="mm" />
+            <PropertyRef Name="it_no" />
+            <PropertyRef Name="bt_no" />
+            <PropertyRef Name="mt_no" />
+            <PropertyRef Name="st_no" />
+          </Key>
+          <Property Name="d_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="yl_id" Type="int" Nullable="false" />
+          <Property Name="yy" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="mm" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="it_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="bt_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="mt_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="st_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="qty" Type="int" />
+          <Property Name="remark" Type="varchar" MaxLength="120" />
+          <Property Name="create_user" Type="varchar" MaxLength="50" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="modi_user" Type="varchar" MaxLength="50" />
+          <Property Name="modi_date" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'purchase.dbo.item' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="item">
+          <Key>
+            <PropertyRef Name="it_no" />
+            <PropertyRef Name="bt_no" />
+            <PropertyRef Name="mt_no" />
+            <PropertyRef Name="st_no" />
+            <PropertyRef Name="mk_no" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="it_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="it_name" Type="nvarchar" MaxLength="60" />
+          <Property Name="bt_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="mt_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="st_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="mk_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="spec" Type="varchar" MaxLength="60" />
+          <Property Name="price" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="unit" Type="varchar" MaxLength="10" />
+          <Property Name="remark" Type="varchar" MaxLength="60" />
+          <Property Name="status" Type="int" Nullable="false" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'purchase.dbo.make' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="make">
+          <Key>
+            <PropertyRef Name="mk_no" />
+          </Key>
+          <Property Name="mk_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="mk_name" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'purchase.dbo.mm' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="mm">
+          <Key>
+            <PropertyRef Name="mm" />
+          </Key>
+          <Property Name="mm" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="mm_name" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="mreport">
+          <Key>
+            <PropertyRef Name="m_no" />
+          </Key>
+          <Property Name="m_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="yl_id" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="yy" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="mm" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="it_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="bt_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="mt_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="st_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="qty" Type="int" />
+          <Property Name="remark" Type="varchar" MaxLength="120" />
+          <Property Name="create_user" Type="varchar" MaxLength="50" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="modi_user" Type="varchar" MaxLength="50" />
+          <Property Name="modi_date" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'purchase.dbo.mtype' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="mtype">
+          <Key>
+            <PropertyRef Name="mt_no" />
+            <PropertyRef Name="mt_name" />
+          </Key>
+          <Property Name="mt_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="mt_name" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="bt_no" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'purchase.dbo.stype' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="stype">
+          <Key>
+            <PropertyRef Name="st_no" />
+          </Key>
+          <Property Name="st_no" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="st_name" Type="nvarchar" MaxLength="60" />
+          <Property Name="bt_no" Type="varchar" MaxLength="60" />
+          <Property Name="mt_no" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="purchaseModelStoreContainer">
+          <EntitySet Name="mreport" EntityType="Self.mreport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="btype" EntityType="Self.btype" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [btype].[bt_no] AS [bt_no], 
+    [btype].[bt_name] AS [bt_name]
+    FROM [dbo].[btype] AS [btype]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="dreport" EntityType="Self.dreport" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [dreport].[d_no] AS [d_no], 
+    [dreport].[yl_id] AS [yl_id], 
+    [dreport].[yy] AS [yy], 
+    [dreport].[mm] AS [mm], 
+    [dreport].[it_no] AS [it_no], 
+    [dreport].[bt_no] AS [bt_no], 
+    [dreport].[mt_no] AS [mt_no], 
+    [dreport].[st_no] AS [st_no], 
+    [dreport].[qty] AS [qty], 
+    [dreport].[remark] AS [remark], 
+    [dreport].[create_user] AS [create_user], 
+    [dreport].[create_date] AS [create_date], 
+    [dreport].[modi_user] AS [modi_user], 
+    [dreport].[modi_date] AS [modi_date]
+    FROM [dbo].[dreport] AS [dreport]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="item" EntityType="Self.item" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [item].[it_no] AS [it_no], 
+    [item].[it_name] AS [it_name], 
+    [item].[bt_no] AS [bt_no], 
+    [item].[mt_no] AS [mt_no], 
+    [item].[st_no] AS [st_no], 
+    [item].[mk_no] AS [mk_no], 
+    [item].[spec] AS [spec], 
+    [item].[price] AS [price], 
+    [item].[unit] AS [unit], 
+    [item].[remark] AS [remark], 
+    [item].[status] AS [status]
+    FROM [dbo].[item] AS [item]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="make" EntityType="Self.make" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [make].[mk_no] AS [mk_no], 
+    [make].[mk_name] AS [mk_name]
+    FROM [dbo].[make] AS [make]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="mm" EntityType="Self.mm" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [mm].[mm] AS [mm], 
+    [mm].[mm_name] AS [mm_name]
+    FROM [dbo].[mm] AS [mm]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="mtype" EntityType="Self.mtype" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [mtype].[mt_no] AS [mt_no], 
+    [mtype].[mt_name] AS [mt_name], 
+    [mtype].[bt_no] AS [bt_no]
+    FROM [dbo].[mtype] AS [mtype]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="stype" EntityType="Self.stype" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [stype].[st_no] AS [st_no], 
+    [stype].[st_name] AS [st_name], 
+    [stype].[bt_no] AS [bt_no], 
+    [stype].[mt_no] AS [mt_no]
+    FROM [dbo].[stype] AS [stype]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="purchaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="mreport">
+          <Key>
+            <PropertyRef Name="m_no" />
+          </Key>
+          <Property Name="m_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="yl_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="yy" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mm" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="it_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="st_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="qty" Type="Int32" />
+          <Property Name="remark" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="create_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="modi_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modi_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="btype">
+          <Key>
+            <PropertyRef Name="bt_no" />
+          </Key>
+          <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bt_name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="dreport">
+          <Key>
+            <PropertyRef Name="d_no" />
+            <PropertyRef Name="yl_id" />
+            <PropertyRef Name="yy" />
+            <PropertyRef Name="mm" />
+            <PropertyRef Name="it_no" />
+            <PropertyRef Name="bt_no" />
+            <PropertyRef Name="mt_no" />
+            <PropertyRef Name="st_no" />
+          </Key>
+          <Property Name="d_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="yl_id" Type="Int32" Nullable="false" />
+          <Property Name="yy" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mm" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="it_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="st_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="qty" Type="Int32" />
+          <Property Name="remark" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="create_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="modi_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modi_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="item">
+          <Key>
+            <PropertyRef Name="it_no" />
+            <PropertyRef Name="bt_no" />
+            <PropertyRef Name="mt_no" />
+            <PropertyRef Name="st_no" />
+            <PropertyRef Name="mk_no" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="it_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="it_name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="st_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mk_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="spec" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="unit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="remark" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="make">
+          <Key>
+            <PropertyRef Name="mk_no" />
+          </Key>
+          <Property Name="mk_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mk_name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="mm">
+          <Key>
+            <PropertyRef Name="mm1" />
+          </Key>
+          <Property Name="mm1" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mm_name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="mtype">
+          <Key>
+            <PropertyRef Name="mt_no" />
+            <PropertyRef Name="mt_name" />
+          </Key>
+          <Property Name="mt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mt_name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="stype">
+          <Key>
+            <PropertyRef Name="st_no" />
+          </Key>
+          <Property Name="st_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="st_name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="bt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="mt_no" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="purchaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mreport" EntityType="Self.mreport" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="btype" EntityType="Self.btype" />
+          <EntitySet Name="dreport" EntityType="Self.dreport" />
+          <EntitySet Name="item" EntityType="Self.item" />
+          <EntitySet Name="make" EntityType="Self.make" />
+          <EntitySet Name="mm" EntityType="Self.mm" />
+          <EntitySet Name="mtype" EntityType="Self.mtype" />
+          <EntitySet Name="stype" EntityType="Self.stype" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="purchaseModelStoreContainer" CdmEntityContainer="purchaseEntities">
+          <EntitySetMapping Name="mreport">
+            <EntityTypeMapping TypeName="purchaseModel.mreport">
+              <MappingFragment StoreEntitySet="mreport">
+                <ScalarProperty Name="m_no" ColumnName="m_no" />
+                <ScalarProperty Name="yl_id" ColumnName="yl_id" />
+                <ScalarProperty Name="yy" ColumnName="yy" />
+                <ScalarProperty Name="mm" ColumnName="mm" />
+                <ScalarProperty Name="it_no" ColumnName="it_no" />
+                <ScalarProperty Name="bt_no" ColumnName="bt_no" />
+                <ScalarProperty Name="mt_no" ColumnName="mt_no" />
+                <ScalarProperty Name="st_no" ColumnName="st_no" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="create_user" ColumnName="create_user" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modi_user" ColumnName="modi_user" />
+                <ScalarProperty Name="modi_date" ColumnName="modi_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="purchaseModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="btype">
+            <EntityTypeMapping TypeName="purchaseModel.btype">
+              <MappingFragment StoreEntitySet="btype">
+                <ScalarProperty Name="bt_no" ColumnName="bt_no" />
+                <ScalarProperty Name="bt_name" ColumnName="bt_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dreport">
+            <EntityTypeMapping TypeName="purchaseModel.dreport">
+              <MappingFragment StoreEntitySet="dreport">
+                <ScalarProperty Name="d_no" ColumnName="d_no" />
+                <ScalarProperty Name="yl_id" ColumnName="yl_id" />
+                <ScalarProperty Name="yy" ColumnName="yy" />
+                <ScalarProperty Name="mm" ColumnName="mm" />
+                <ScalarProperty Name="it_no" ColumnName="it_no" />
+                <ScalarProperty Name="bt_no" ColumnName="bt_no" />
+                <ScalarProperty Name="mt_no" ColumnName="mt_no" />
+                <ScalarProperty Name="st_no" ColumnName="st_no" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="create_user" ColumnName="create_user" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modi_user" ColumnName="modi_user" />
+                <ScalarProperty Name="modi_date" ColumnName="modi_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="item">
+            <EntityTypeMapping TypeName="purchaseModel.item">
+              <MappingFragment StoreEntitySet="item">
+                <ScalarProperty Name="it_no" ColumnName="it_no" />
+                <ScalarProperty Name="it_name" ColumnName="it_name" />
+                <ScalarProperty Name="bt_no" ColumnName="bt_no" />
+                <ScalarProperty Name="mt_no" ColumnName="mt_no" />
+                <ScalarProperty Name="st_no" ColumnName="st_no" />
+                <ScalarProperty Name="mk_no" ColumnName="mk_no" />
+                <ScalarProperty Name="spec" ColumnName="spec" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="make">
+            <EntityTypeMapping TypeName="purchaseModel.make">
+              <MappingFragment StoreEntitySet="make">
+                <ScalarProperty Name="mk_no" ColumnName="mk_no" />
+                <ScalarProperty Name="mk_name" ColumnName="mk_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mm">
+            <EntityTypeMapping TypeName="purchaseModel.mm">
+              <MappingFragment StoreEntitySet="mm">
+                <ScalarProperty Name="mm1" ColumnName="mm" />
+                <ScalarProperty Name="mm_name" ColumnName="mm_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mtype">
+            <EntityTypeMapping TypeName="purchaseModel.mtype">
+              <MappingFragment StoreEntitySet="mtype">
+                <ScalarProperty Name="mt_no" ColumnName="mt_no" />
+                <ScalarProperty Name="mt_name" ColumnName="mt_name" />
+                <ScalarProperty Name="bt_no" ColumnName="bt_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stype">
+            <EntityTypeMapping TypeName="purchaseModel.stype">
+              <MappingFragment StoreEntitySet="stype">
+                <ScalarProperty Name="st_no" ColumnName="st_no" />
+                <ScalarProperty Name="st_name" ColumnName="st_name" />
+                <ScalarProperty Name="bt_no" ColumnName="bt_no" />
+                <ScalarProperty Name="mt_no" ColumnName="mt_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
